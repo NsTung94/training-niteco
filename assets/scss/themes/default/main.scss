@@ -1,0 +1,43 @@
+@import "../default/variables";
+@import "../default/mixins";
+@import "../default/font";
+@import "../default/reset";
+
+@import "../default/components/breadcrumb";
+@import "../default/components/category";
+@import "../default/components/footer";
+@import "../default/components/header";
+@import "../default/components/hero";
+@import "../default/components/placeholder";
+@import "../default/components/product";
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+  margin: 0 15px;
+}
+
+:root {
+  --primary-color: #011e41;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: var(--primary-color);
+  font-family: "Electrolux";
+}
+
+.wrapper {
+  width: 375px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1180px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,17 @@
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot ttf svg woff woff2) {
+	// to do woff woff2
+	$src: $path; 
+
+	$formats: (
+		eot: 'embedded-opentype',
+		ttf: 'truetype',
+	);
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+		font-display: swap;
+	}
+}

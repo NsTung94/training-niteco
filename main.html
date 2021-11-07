@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Training</title>
+
+    <link
+      rel="stylesheet"
+      href="./node_modules/owl.carousel/dist/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./assets/scss/themes/default/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header" id="header">
+        <div class="header__logo">
+          <img src="./assets/scss/themes/default/icon/electrolux_logo.png" />
+        </div>
+        <div class="navigation">
+          <div class="navigation__link">
+            <div class="navigation__item" onclick="myFunction()">
+              Appliances
+            </div>
+            <div class="navigation__item">Support</div>
+            <div class="navigation__item">Promotions</div>
+          </div>
+          <ul class="navigation__icons">
+            <li class="navigation__icon">
+              <button>
+                <img
+                  src="./assets/scss/themes/default/icons/search.svg"
+                  alt=""
+                  li
+                  class="navigation__icon-img"
+                />
+              </button>
+            </li>
+            <li class="navigation__icon" id="user">
+              <img
+                src="./assets/scss/themes/default/icon/user.png"
+                alt=""
+                li
+                class="navigation__icon-img"
+              />
+            </li>
+            <li class="navigation__icon">
+              <img
+                src="./assets/scss/themes/default/icons/Cart.svg"
+                alt=""
+                li
+                class="navigation__icon-img"
+              />
+            </li>
+            
+            <li class="navigation__icon" id="menu">
+              <img
+                src="./assets/scss/themes/default/icons/hamburger.svg"
+                alt=""
+                li
+                class="navigation__icon-img"
+              />
+            </li>
+            <li class="navigation__icon" id="language">
+              <span>en</span>
+              <img
+                src="./assets/scss/themes/default/icon/chevron-down.png"
+                alt=""
+              />
+              <ul class="dropdown">
+                <li onclick="">English</li>
+                <li onclick="">Vietnamese</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="breadcrumb">
+        <button class="breadcrumb__back">
+          <img
+            src="./assets/scss/themes/default/icons/chevron-left.svg"
+            alt=""
+          />
+          <a href="#">Trở về trang chủ</a>
+        </button>
+        <ul class="pagination">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Promotion</a></li>
+        </ul>
+      </div>
+
+      <div class="hero">
+        <img
+          src="./assets/scss/themes/electrolux/images/Rectangle Copy.png"
+          alt=""
+          class="hero__img"
+        />
+        <div class="hero__inner">promotion</div>
+      </div>
+    </header>
+    <div class="container">
+      <section class="category">
+        <div class="category__heading">Categories</div>
+
+        <div class="category__list owl-carousel owl-theme">
+          <div class="item">
+            <div class="icon">
+              <img
+                src="./assets/scss/themes/default/icon/Group 295.png"
+                alt=""
+              />
+            </div>
+            <div class="type">All Categories</div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <img
+                src="./assets/scss/themes/default/icon/washing-machine.png"
+                alt=""
+              />
+            </div>
+            <div class="type">Washing machines</div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <img src="./assets/scss/themes/default/icon/Hobs.png" alt="" />
+            </div>
+            <div class="type">Hobs</div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <img
+                src="./assets/scss/themes/default/icon/air-fryer.png"
+                alt=""
+              />
+            </div>
+            <div class="type">Air fryers</div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <img
+                src="./assets/scss/themes/default/icon/refrigerator.png"
+                alt=""
+              />
+            </div>
+            <div class="type">Refrigerators</div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <img
+                src="./assets/scss/themes/default/icon/coffee-machine.png"
+                alt=""
+              />
+            </div>
+            <div class="type">Coffee machine</div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <img
+                src="./assets/scss/themes/default/icon/rice-cooker.png"
+                alt=""
+              />
+            </div>
+            <div class="type">Rice cookers</div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <img
+                src="./assets/scss/themes/default/icon/dish-washer.png"
+                alt=""
+              />
+            </div>
+            <div class="type">Dishwashers</div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <img
+                src="./assets/scss/themes/default/icon/vacuum-cleaner.png"
+                alt=""
+              />
+            </div>
+            <div class="type">Vacuum Cleaners</div>
+          </div>
+        </div>
+      </section>
+      <section class="product">
+        <div class="product__filter" id="filter">
+          <div class="filter">
+            <div class="filter__button" onclick="showSelector()">
+              <img
+                src="./assets/scss/themes/default/icon/filter-icon.svg"
+                alt=""
+                class="icon"
+              />
+              <span>Filter</span>
+            </div>
+            <div class="refresh" onclick="resetCbs()">
+              <img
+                src="./assets/scss/themes/default/icons/reset-filter.svg"
+                alt=""
+              />
+              <span class="reset">Reset</span>
+            </div>
+          </div>
+
+          <div class="sort" onclick="showSort()">
+            <span>Sort By</span>
+            <p class="desktop" id="demo">Default</p>
+            <img
+              src="./assets/scss/themes/default/icon/Fill 4.png"
+              alt=""
+              class="icon"
+            />
+            <div class="selectSort" id="selectSort">
+              <div class="option">
+                <div class="selectSort__heading">price</div>
+                <button onclick="changeSortBy('Price Down')">High to Low</button>
+                <button onclick="changeSortBy('Price Up')">Low to High</button>
+              </div>
+              <div class="option">
+                <div class="selectSort__heading">name</div>
+                <button onClick="changeSortBy('Name Down')">High to Low</button>
+                <button onclick="changeSortBy('Name Up')">Low to High</button>
+              </div>
+              <div class="option" style="display: flex" onclick="changeSortBy('Default')">
+                <button class="selectSort__heading">Default</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product__items">
+          <div class="selector" id="selector">
+            <label>
+              <input type="checkbox" onchange="change()" checked="checked" />
+              <span>Buy from Electrolux</span>
+            </label>
+            <div class="selector__heading">deal type</div>
+            <div class="dealType">
+              <label
+                ><input type="checkbox" onchange="change()" rel="all" />
+                <span>All</span>
+              </label>
+              <label
+                ><input type="checkbox" onchange="change()" rel="gift" />
+                <span>Freegift</span>
+              </label>
+              <label
+                ><input type="checkbox" onchange="change()" rel="discount" />
+                <span>Savings & Sales</span>
+              </label>
+              <label
+                ><input type="checkbox" onchange="change()" rel="bundle" />
+                <span>Member only</span>
+              </label>
+            </div>
+            <div class="selector__heading">price</div>
+            <div class="price">
+              <label
+                ><input type="checkbox" onchange="change()" rel="high" />
+                <span>20 Million or more</span>
+              </label>
+              <label
+                ><input type="checkbox" onchange="change()" rel="normal" />
+                <span>10 - 20 Million</span>
+              </label>
+              <label
+                ><input type="checkbox" onchange="change()" rel="low" />
+                <span>Below 10 Million</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="items-container">
+            <div class="items">
+              <div class="item">
+                <div class="item__tag">
+                  <div class="gift">
+                    <img
+                      src="./assets/scss/themes/default/icon/gift.png"
+                      alt=""
+                    />
+                    <span>free gift</span>
+                  </div>
+                </div>
+                <div class="item__content">
+                  <div class="item__img placeholder">
+                    <img
+                      class="lazy-observer"
+                      data-src="./assets/scss/themes/electrolux/images/tulanh1.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="item__container">
+                    <div class="code">EBB2802H-H</div>
+                    <div class="name">
+                      253L NutriFresh® inverter bottom mount refrigerator - black
+                    </div>
+                    <div class="rate">
+                      <div class="rating-group">
+                        <label
+                          aria-label="0.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating2-05"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating2"
+                          id="rating2-05"
+                          value="0.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="1 star"
+                          class="rating__label"
+                          for="rating2-10"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating2"
+                          id="rating2-10"
+                          value="1"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="1.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating2-15"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating2"
+                          id="rating2-15"
+                          value="1.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="2 stars"
+                          class="rating__label"
+                          for="rating2-20"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating2"
+                          id="rating2-20"
+                          value="2"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="2.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating2-25"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating2"
+                          id="rating2-25"
+                          value="2.5"
+                          type="radio"
+                          checked
+                        />
+                        <label
+                          aria-label="3 stars"
+                          class="rating__label"
+                          for="rating2-30"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating2"
+                          id="rating2-30"
+                          value="3"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="3.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating2-35"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating2"
+                          id="rating2-35"
+                          value="3.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="4 stars"
+                          class="rating__label"
+                          for="rating2-40"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating2"
+                          id="rating2-40"
+                          value="4"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="4.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating2-45"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating2"
+                          id="rating2-45"
+                          value="4.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="5 stars"
+                          class="rating__label"
+                          for="rating2-50"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating2"
+                          id="rating2-50"
+                          value="5"
+                          type="radio"
+                        />
+                      </div>
+                      <div>(102 Reviews)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item__price">
+                  <div class="old">7504999</div>
+                  <div class="new">3757000</div>
+                </div>
+                <div class="item__suggestion">
+                  <div class="interest">
+                    <div class="number">0%</div>
+                    <span>Interest</span>
+                  </div>
+                  <div class="payment">
+                    <div class="money">3.331.000 VND/month</div>
+                    <div class="due">for 6 months</div>
+                  </div>
+                </div>
+                <ul class="item__description">
+                  <li>
+                    360 Cooling maintains a stable temperature to keep food fresh
+                    for longer.
+                  </li>
+                  <li>XL Freezer enables you to store more</li>
+                </ul>
+                <div class="item__action">
+                  <button class="add">add to cart</button>
+                  <button class="research">learn more</button>
+                </div>
+                <label class="compare">
+                  <input type="checkbox" onchange="change()" />
+                  Add to Compare
+                </label>
+              </div>
+              <div class="item">
+                <div class="item__tag">
+                  <div class="new">new</div>
+                  <div class="bundle">bundle</div>
+                </div>
+                <div class="item__content">
+                  <div class="item__img placeholder">
+                    <img
+                      class="lazy-observer"
+                      data-src="./assets/scss/themes/electrolux/images/tulanh2.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="item__container">
+                    <div class="code">EBB3442K-A</div>
+                    <div class="name">
+                      308L UltimateTaste 300 bottom freezer refrigerator
+                    </div>
+                    <div class="rate">
+                      <div class="rating-group">
+                        <label
+                          aria-label="0.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating1-05"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating1"
+                          id="rating1-05"
+                          value="0.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="1 star"
+                          class="rating__label"
+                          for="rating1-10"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating1"
+                          id="rating1-10"
+                          value="1"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="1.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating1-15"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating1"
+                          id="rating1-15"
+                          value="1.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="2 stars"
+                          class="rating__label"
+                          for="rating1-20"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating1"
+                          id="rating1-20"
+                          value="2"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="2.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating1-25"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating1"
+                          id="rating1-25"
+                          value="2.5"
+                          type="radio"
+                          checked
+                        />
+                        <label
+                          aria-label="3 stars"
+                          class="rating__label"
+                          for="rating1-30"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating1"
+                          id="rating1-30"
+                          value="3"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="3.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating1-35"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating1"
+                          id="rating1-35"
+                          value="3.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="4 stars"
+                          class="rating__label"
+                          for="rating1-40"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating1"
+                          id="rating1-40"
+                          value="4"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="4.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating1-45"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating1"
+                          id="rating1-45"
+                          value="4.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="5 stars"
+                          class="rating__label"
+                          for="rating1-50"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating1"
+                          id="rating1-50"
+                          value="5"
+                          type="radio"
+                        />
+                      </div>
+                      <div>(102 Reviews)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item__price">
+                  <div class="new">14789999</div>
+                </div>
+                <div class="item__suggestion">
+                  <div class="interest">
+                    <div class="number">0%</div>
+                    <span>Interest</span>
+                  </div>
+                  <div class="payment">
+                    <div class="money">3.331.000 VND/month</div>
+                    <div class="due">for 6 months</div>
+                  </div>
+                </div>
+                <ul class="item__description">
+                  <li>TasteSeal keeps fish for 7 days* without freezing.</li>
+                  <li>TasteLockAuto keeps vegetables fresh for 7 days*.</li>
+                  <li>WaterStream for chilled water through the door.</li>
+                </ul>
+                <div class="item__action">
+                  <button class="add">add to cart</button>
+                  <button class="research">learn more</button>
+                </div>
+                <label class="compare">
+                  <input type="checkbox" onchange="change()" />
+                  Add to Compare
+                </label>
+              </div>
+              <div class="item">
+                <div class="item__tag">
+                  <div class="new">new</div>
+                  <div class="discount">sale</div>
+                  <div class="gift">
+                    <img
+                      src="./assets/scss/themes/default/icon/gift.png"
+                      alt=""
+                    />
+                    <span>free gift</span>
+                  </div>
+                </div>
+                <div class="item__content">
+                  <div class="item__img placeholder">
+                    <img
+                      class="lazy-observer"
+                      data-src="./assets/scss/themes/electrolux/images/tulanh3.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="item__container">
+                    <div class="code">EBE4500B-G</div>
+                    <div class="name">421L bottom freezer refrigerator</div>
+                    <div class="rate">
+                      <div class="rating-group">
+                        <label
+                          aria-label="0.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating3-05"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating3"
+                          id="rating3-05"
+                          value="0.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="1 star"
+                          class="rating__label"
+                          for="rating3-10"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating3"
+                          id="rating3-10"
+                          value="1"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="1.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating3-15"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating3"
+                          id="rating3-15"
+                          value="1.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="2 stars"
+                          class="rating__label"
+                          for="rating3-20"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating3"
+                          id="rating3-20"
+                          value="2"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="2.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating3-25"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating3"
+                          id="rating3-25"
+                          value="2.5"
+                          type="radio"
+                          checked
+                        />
+                        <label
+                          aria-label="3 stars"
+                          class="rating__label"
+                          for="rating3-30"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating3"
+                          id="rating3-30"
+                          value="3"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="3.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating3-35"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating3"
+                          id="rating3-35"
+                          value="3.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="4 stars"
+                          class="rating__label"
+                          for="rating3-40"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating3"
+                          id="rating3-40"
+                          value="4"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="4.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating3-45"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating3"
+                          id="rating3-45"
+                          value="4.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="5 stars"
+                          class="rating__label"
+                          for="rating3-50"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating3"
+                          id="rating3-50"
+                          value="5"
+                          type="radio"
+                        />
+                      </div>
+                      <div>(102 Reviews)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item__price">
+                  <div class="new">16390000</div>
+                </div>
+                <div class="item__suggestion">
+                  <div class="interest">
+                    <div class="number">0%</div>
+                    <span>Interest</span>
+                  </div>
+                  <div class="payment">
+                    <div class="money">3.331.000 VND/month</div>
+                    <div class="due">for 6 months</div>
+                  </div>
+                </div>
+                <ul class="item__description">
+                  <li>TasteLockPlus keeps vegetables fresh for 7 days*.</li>
+                  <li>EvenTemp reduces temperature fluctuations.</li>
+                  <li>Spacious freezer provides ample storage.</li>
+                  <li>TasteLockPlus keeps vegetables fresh for 7 days*.</li>
+                </ul>
+                <div class="item__action">
+                  <button class="add">add to cart</button>
+                  <button class="research">learn more</button>
+                </div>
+                <label class="compare">
+                  <input type="checkbox" onchange="change()" />
+                  Add to Compare
+                </label>
+              </div>
+              <div class="item">
+                <div class="item__tag">
+                  <div class="new">new</div>
+                  <div class="discount">sale</div>
+                </div>
+                <div class="item__content">
+                  <div class="item__img placeholder">
+                    <img
+                      class="lazy-observer"
+                      data-src="./assets/scss/themes/electrolux/images/tulanh4.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="item__container">
+                    <div class="code">ebe4500b-h</div>
+                    <div class="name">421L bottom freezer refrigerator</div>
+                    <div class="rate">
+                      <div class="rating-group">
+                        <label
+                          aria-label="0.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating4-05"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating4"
+                          id="rating4-05"
+                          value="0.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="1 star"
+                          class="rating__label"
+                          for="rating4-10"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating4"
+                          id="rating4-10"
+                          value="1"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="1.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating4-15"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating4"
+                          id="rating4-15"
+                          value="1.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="2 stars"
+                          class="rating__label"
+                          for="rating4-20"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating4"
+                          id="rating4-20"
+                          value="2"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="2.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating4-25"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating4"
+                          id="rating4-25"
+                          value="2.5"
+                          type="radio"
+                          checked
+                        />
+                        <label
+                          aria-label="3 stars"
+                          class="rating__label"
+                          for="rating4-30"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating4"
+                          id="rating4-30"
+                          value="3"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="3.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating4-35"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating4"
+                          id="rating4-35"
+                          value="3.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="4 stars"
+                          class="rating__label"
+                          for="rating4-40"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating4"
+                          id="rating4-40"
+                          value="4"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="4.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating4-45"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating4"
+                          id="rating4-45"
+                          value="4.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="5 stars"
+                          class="rating__label"
+                          for="rating4-50"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating4"
+                          id="rating4-50"
+                          value="5"
+                          type="radio"
+                        />
+                      </div>
+                      <div>(102 Reviews)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item__price">
+                  <div class="new">16590000</div>
+                </div>
+                <div class="item__suggestion">
+                  <div class="interest">
+                    <div class="number">0%</div>
+                    <span>Interest</span>
+                  </div>
+                  <div class="payment">
+                    <div class="money">3.331.000 VND/month</div>
+                    <div class="due">for 6 months</div>
+                  </div>
+                </div>
+                <ul class="item__description">
+                  <li>TasteLockPlus keeps vegetables fresh for 7 days*.</li>
+                  <li>EvenTemp reduces temperature fluctuations.</li>
+                  <li>Spacious freezer provides ample storage.</li>
+                </ul>
+                <div class="item__action">
+                  <button class="add">add to cart</button>
+                  <button class="research">learn more</button>
+                </div>
+                <label class="compare">
+                  <input type="checkbox" onchange="change()" />
+                  Add to Compare
+                </label>
+              </div>
+              <div class="item">
+                <div class="item__tag">
+                  <div class="discount">sale</div>
+                </div>
+                <div class="item__content">
+                  <div class="item__img placeholder">
+                    <img
+                      class="lazy-observer"
+                      data-src="./assets/scss/themes/electrolux/images/tulanh5.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="item__container">
+                    <div class="code">ehe5224b-a</div>
+                    <div class="name">
+                      491L NutriFresh® inverter French door refrigerator
+                    </div>
+                    <div class="rate">
+                      <div class="rating-group">
+                        <label
+                          aria-label="0.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating5-05"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating5"
+                          id="rating5-05"
+                          value="0.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="1 star"
+                          class="rating__label"
+                          for="rating5-10"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating5"
+                          id="rating5-10"
+                          value="1"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="1.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating5-15"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating5"
+                          id="rating5-15"
+                          value="1.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="2 stars"
+                          class="rating__label"
+                          for="rating5-20"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating5"
+                          id="rating5-20"
+                          value="2"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="2.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating5-25"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating5"
+                          id="rating5-25"
+                          value="2.5"
+                          type="radio"
+                          checked
+                        />
+                        <label
+                          aria-label="3 stars"
+                          class="rating__label"
+                          for="rating5-30"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating5"
+                          id="rating5-30"
+                          value="3"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="3.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating5-35"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating5"
+                          id="rating5-35"
+                          value="3.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="4 stars"
+                          class="rating__label"
+                          for="rating5-40"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating5"
+                          id="rating5-40"
+                          value="4"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="4.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating5-45"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating5"
+                          id="rating5-45"
+                          value="4.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="5 stars"
+                          class="rating__label"
+                          for="rating5-50"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating5"
+                          id="rating5-50"
+                          value="5"
+                          type="radio"
+                        />
+                      </div>
+                      <div>(102 Reviews)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item__price">
+                  <div class="old">12945000</div>
+                  <div class="new">25890000</div>
+                </div>
+                <div class="item__suggestion">
+                  <div class="interest">
+                    <div class="number">0%</div>
+                    <span>Interest</span>
+                  </div>
+                  <div class="payment">
+                    <div class="money">3.331.000 VND/month</div>
+                    <div class="due">for 6 months</div>
+                  </div>
+                </div>
+                <ul class="item__description">
+                  <li>
+                    TasteLock crisper keeps your fruit & vegetables fresh for 7
+                    days.
+                  </li>
+                  <li>
+                    Automatic ice maker provides cubed or crushed ice at your
+                    fingertips.
+                  </li>
+                </ul>
+                <div class="item__action">
+                  <button class="add">add to cart</button>
+                  <button class="research">learn more</button>
+                </div>
+                <label class="compare">
+                  <input type="checkbox" onchange="change()" checked="checked" />
+                  Add to Compare
+                </label>
+              </div>
+              <div class="item">
+                <div class="item__tag">
+                  <div class="bundle">bundle</div>
+                  <!-- <div class="bundle">bundle</div> -->
+                </div>
+                <div class="item__content">
+                  <div class="item__img placeholder">
+                    <img
+                      class="lazy-observer"
+                      data-src="./assets/scss/themes/electrolux/images/tulanh6.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="item__container">
+                    <div class="code">EHE6879A-B</div>
+                    <div class="name">617L French door refrigerator</div>
+                    <div class="rate">
+                      <div class="rating-group">
+                        <label
+                          aria-label="0.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating6-05"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating6"
+                          id="rating6-05"
+                          value="0.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="1 star"
+                          class="rating__label"
+                          for="rating6-10"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating6"
+                          id="rating6-10"
+                          value="1"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="1.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating6-15"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating6"
+                          id="rating6-15"
+                          value="1.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="2 stars"
+                          class="rating__label"
+                          for="rating6-20"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating6"
+                          id="rating6-20"
+                          value="2"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="2.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating6-25"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating6"
+                          id="rating6-25"
+                          value="2.5"
+                          type="radio"
+                          checked
+                        />
+                        <label
+                          aria-label="3 stars"
+                          class="rating__label"
+                          for="rating6-30"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating6"
+                          id="rating6-30"
+                          value="3"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="3.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating6-35"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating6"
+                          id="rating6-35"
+                          value="3.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="4 stars"
+                          class="rating__label"
+                          for="rating6-40"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating6"
+                          id="rating6-40"
+                          value="4"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="4.5 stars"
+                          class="rating__label rating__label--half"
+                          for="rating6-45"
+                          ><i
+                            class="
+                              rating__icon rating__icon--star
+                              fa fa-star-half
+                            "
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating6"
+                          id="rating6-45"
+                          value="4.5"
+                          type="radio"
+                        />
+                        <label
+                          aria-label="5 stars"
+                          class="rating__label"
+                          for="rating6-50"
+                          ><i
+                            class="rating__icon rating__icon--star fa fa-star"
+                          ></i
+                        ></label>
+                        <input
+                          class="rating__input"
+                          name="rating6"
+                          id="rating6-50"
+                          value="5"
+                          type="radio"
+                        />
+                      </div>
+                      <div>(102 Reviews)</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item__price">
+                  <div class="new">42990000</div>
+                </div>
+                <div class="item__suggestion">
+                  <div class="interest">
+                    <div class="number">0%</div>
+                    <span>Interest</span>
+                  </div>
+                  <div class="payment">
+                    <div class="money">3.331.000 VND/month</div>
+                    <div class="due">for 6 months</div>
+                  </div>
+                </div>
+                <ul class="item__description">
+                  <li>TasteSealFlex ideal storage with 5 temperatures.</li>
+                  <li>TasteLockAuto keeps vegetables fresh for 7 days*.</li>
+                  <li>TwinTech Cooling preserves taste and texture.</li>
+                </ul>
+                <div class="item__action">
+                  <button class="add">add to cart</button>
+                  <button class="research">learn more</button>
+                </div>
+                <label class="compare">
+                  <input type="checkbox" onchange="change()" checked="checked" />
+                  Add to Compare
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer id="footer">
+      <div class="option__list">
+        <div class="container">
+          <div class="option__item">
+            <div class="heading">
+              <a href="">kitchen</a>
+              <div class="icon">+</div>
+            </div>
+            <ul class="content">
+              <li>Cooktops</li>
+              <li>Ovens</li>
+              <li>Freestanding Cooers</li>
+              <li>Hoods</li>
+              <li>Refrigerators</li>
+              <li>Dishwashers</li>
+              <li>MicroWaves</li>
+              <li>Table Top Ovens</li>
+              <li>Small Appliances</li>
+            </ul>
+          </div>
+          <div class="option__item">
+            <div class="heading">
+              <a href="">Laundry</a>
+              <div class="icon">+</div>
+            </div>
+            <ul class="content">
+              <li>Washing Machine</li>
+              <li>Dryers</li>
+            </ul>
+          </div>
+          <div class="option__item">
+            <div class="heading">
+              <a href="">wellbeing</a>
+              <div class="icon">+</div>
+            </div>
+            <ul class="content">
+              <li>Vaccum Cleaners</li>
+              <li>Air Care</li>
+              <li>Water Heaters</li>
+            </ul>
+          </div>
+          <div class="option__item">
+            <div class="heading">
+              <a href="">inspiration</a>
+              <div class="icon">+</div>
+            </div>
+            <ul class="content">
+              <li>Cooker Hoods</li>
+              <li>Kettles & Water Filtration</li>
+              <li>Cooker Hoods</li>
+              <li>Kettles & Water Filtration</li>
+            </ul>
+          </div>
+          <div class="option__item">
+            <div class="heading">
+              <a href="">support</a>
+              <div class="icon">+</div>
+            </div>
+            <ul class="content">
+              <li>Warranty Information</li>
+              <li>Product Registration</li>
+              <li>Extended Warranty</li>
+              <li>Service Centres</li>
+              <li>User Manuals</li>
+              <li>Download Brochures</li>
+              <li>How-to Videos</li>
+              <li>FAQ</li>
+            </ul>
+          </div>
+          <div class="option__item">
+            <div class="heading">
+              <a href="">about electrolux</a>
+              <div class="icon">+</div>
+            </div>
+            <ul class="content">
+              <li>Our Company</li>
+              <li>Design Innovation</li>
+              <li>Environment & sustainability</li>
+              <li>Career</li>
+              <li>Global Leader</li>
+            </ul>
+          </div>
+          <div class="option__item">
+            <div class="heading">
+              <a href="">promotions</a>
+              <div class="icon">+</div>
+            </div>
+            <ul class="content">
+              <li></li>
+            </ul>
+          </div>
+          <div class="option__item">
+            <div class="heading">
+              <a href="">where to buy</a>
+            </div>
+            <ul class="content">
+              <li></li>
+            </ul>
+          </div>
+          <div class="contact-icon">
+            <img
+              id="mobile"
+              src="./assets/scss/themes/default/icon/contact-mobile.png"
+              alt=""
+            />
+            <img
+              id="desktop"
+              src="./assets/scss/themes/default/icon/contact.png"
+              alt=""
+            />
+            <!-- data-srcset="
+            ./assets/scss/themes/electrolux/icon/contact.png 600w"  -->
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="connect">
+          <div class="social">
+            <div class="icons">
+              <img
+                src="./assets/scss/themes/default/icon/facebook.png"
+                alt=""
+                class="social__icon"
+              />
+              <img
+                src="./assets/scss/themes/default/icon/icon-p.png"
+                alt=""
+                class="social__icon"
+              />
+              <img
+                src="./assets/scss/themes/default/icon/youtube.png"
+                alt=""
+                class="social__icon"
+              />
+              <img
+                src="./assets/scss/themes/default/icon/twitter.png"
+                alt=""
+                class="social__icon"
+              />
+            </div>
+            <div class="infor">
+              Electroluxgroup.com | Electrolux Professional | Newsroom |
+              Financial Information
+            </div>
+          </div>
+          <div class="download">
+            <div class="heading">Download Electrolux Life App</div>
+            <div class="download__option">
+              <div class="store">
+                <img src="./assets/scss/themes/default/icon/App Store.png" />
+              </div>
+              <div class="store">
+                <img src="./assets/scss/themes/default/icon/Play Store.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="term">
+          Terms & Conditions | Data Protection Policy | Cookie Guideline |
+          Sitemap
+        </div>
+
+        <div class="copyright">
+          Copyright 2020 Electrolux - All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="./assets/js/main.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="./node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
+
+  <script>
+    var owl = $(".owl-carousel");
+    owl.children().each(function (index) {
+      console.log($(this).attr("data-position", index));
+      $(this).attr("data-position", index);
+    });
+    owl.owlCarousel({
+      navText: [
+        "<span><img src='./assets/scss/themes/default/icon/Left (Stroke).png'/></span>",
+        "<span><img src='./assets/scss/themes/default/icon/Path 2 (Stroke).png'/></span>",
+      ],
+      items: 3,
+      center: true,
+      loop: true,
+      lazyLoad: true,
+      nav: false,
+      dots: false,
+      responsiveClass: true,
+      autoWidth: true,
+      responsive: {
+        600: {
+          nav: true,
+        }
+      }
+    });
+    $(document).on("click", ".owl-item>div", function () {
+      owl.trigger("to.owl.carousel", [$(this).data("position"), 300]);
+    });
+  </script>
+</html>
