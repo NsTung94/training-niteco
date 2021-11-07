@@ -438,17 +438,18 @@ footer .container .copyright {
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 345px;
+  justify-content: space-between;
+  width: 100%;
   height: 63px;
-  margin: 0 auto;
+  margin: 0 15px;
 }
 .header .navigation {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 100%;
+  width: auto;
+  margin: 0 15px;
 }
 .header .navigation__link {
   display: none;
@@ -456,9 +457,10 @@ footer .container .copyright {
 .header .navigation__icons {
   display: flex;
   align-items: center;
+  padding: 0;
 }
 .header .navigation__icons .navigation__icon {
-  margin-left: 28.75px;
+  margin-right: 15px;
 }
 .header .navigation__icons .navigation__icon button {
   background-color: transparent;
@@ -634,9 +636,6 @@ footer .container .copyright {
 }
 .product__filter .filter__button span {
   text-transform: uppercase;
-}
-.product__filter .sort {
-  margin-right: 20px;
 }
 .product__filter .sort .desktop {
   margin-right: 15px;
@@ -1036,6 +1035,7 @@ footer .container .copyright {
   .product__filter .sort {
     position: relative;
     justify-content: flex-end;
+    margin-right: 20px;
   }
   .product__filter .sort .desktop {
     display: block;
