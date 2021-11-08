@@ -66,7 +66,7 @@
                 class="navigation__icon-img"
               />
             </li>
-            
+
             <li class="navigation__icon" id="menu">
               <img
                 src="./assets/scss/themes/default/icons/hamburger.svg"
@@ -219,83 +219,179 @@
 
           <div class="sort" onclick="showSort()">
             <span>Sort By</span>
-            <p class="desktop" id="demo">Default</p>
+
             <img
               src="./assets/scss/themes/default/icon/Fill 4.png"
               alt=""
               class="icon"
             />
             <div class="selectSort" id="selectSort">
-              <div class="option">
-                <div class="selectSort__heading">price</div>
-                <button onclick="changeSortBy('Price Down')">High to Low</button>
-                <button onclick="changeSortBy('Price Up')">Low to High</button>
+              <div class="overlay"></div>
+
+              <div class="list">
+                <div class="option">
+                  <button
+                    class="selectSort__heading"
+                    onclick="changeSortBy(': Default')"
+                  >
+                    Default
+                  </button>
+                </div>
+                <div class="option">
+                  <button onclick="changeSortBy(': Price Down')">
+                    Price high to low
+                  </button>
+                  <button onclick="changeSortBy(': Price Up')">
+                    Price low to high
+                  </button>
+                </div>
+                <div class="option">
+                  <button onClick="changeSortBy(': Rate')">Highest rate</button>
+                </div>
               </div>
-              <div class="option">
-                <div class="selectSort__heading">name</div>
-                <button onClick="changeSortBy('Name Down')">High to Low</button>
-                <button onclick="changeSortBy('Name Up')">Low to High</button>
-              </div>
-              <div class="option" style="display: flex" onclick="changeSortBy('Default')">
-                <button class="selectSort__heading">Default</button>
-              </div>
+            
             </div>
           </div>
         </div>
 
         <div class="product__items">
           <div class="selector" id="selector">
-            <label>
-              <input type="checkbox" onchange="change()" checked="checked" />
-              <span>Buy from Electrolux</span>
-            </label>
-            <div class="selector__heading">deal type</div>
-            <div class="dealType">
-              <label
-                ><input type="checkbox" onchange="change()" rel="all" />
-                <span>All</span>
-              </label>
-              <label
-                ><input type="checkbox" onchange="change()" rel="gift" />
-                <span>Freegift</span>
-              </label>
-              <label
-                ><input type="checkbox" onchange="change()" rel="discount" />
-                <span>Savings & Sales</span>
-              </label>
-              <label
-                ><input type="checkbox" onchange="change()" rel="bundle" />
-                <span>Member only</span>
-              </label>
+            <div class="selector__header">
+              <img
+                src="./assets/scss/themes/default/icon/filter-icon.svg"
+                alt=""
+                class="icon"
+              />
+              <span>Filter</span>
+              <img
+                src="./assets/scss/themes/default/icons/close-icon.svg"
+                alt=""
+                id="close"
+              />
             </div>
-            <div class="selector__heading">price</div>
-            <div class="price">
-              <label
-                ><input type="checkbox" onchange="change()" rel="high" />
-                <span>20 Million or more</span>
-              </label>
-              <label
-                ><input type="checkbox" onchange="change()" rel="normal" />
-                <span>10 - 20 Million</span>
-              </label>
-              <label
-                ><input type="checkbox" onchange="change()" rel="low" />
-                <span>Below 10 Million</span>
-              </label>
+            <div class="selector__container">
+              <div class="content">
+                <div class="content__heading">
+                  <div class="title">Storage</div>
+                </div>
+                <div class="content__items" id="storage">
+                  <label>
+                    <input type="checkbox" checked="checked" />
+                    <span>Buy from Electrolux</span>
+                  </label>
+                  <label
+                    ><input type="checkbox" rel="all" />
+                    <span>All</span>
+                  </label>
+                </div>
+              </div>
+              <div class="content showContent">
+                <div class="content__heading">
+                  <div class="title">deal type</div>
+                </div>
+                <div class="content__items" id="dealType">
+                  <label
+                    ><input type="checkbox" rel="gift" />
+                    <span>Freegift</span>
+                  </label>
+                  <label
+                    ><input type="checkbox" rel="discount" />
+                    <span>Savings & Sales</span>
+                  </label>
+                  <label class="disable"
+                    ><input
+                      type="checkbox"
+                      rel="bundle"
+                      onclick="return false"
+                    />
+                    <span>Member only</span>
+                  </label>
+                </div>
+              </div>
+              <div class="content">
+                <div class="content__heading">
+                  <div class="title">price</div>
+                </div>
+                <div class="content__items" id="price">
+                  <label
+                    ><input type="checkbox" rel="high" />
+                    <span>20 Million or more</span>
+                  </label>
+                  <label
+                    ><input type="checkbox" rel="normal" />
+                    <span>10 - 20 Million</span>
+                  </label>
+                  <label
+                    ><input type="checkbox" rel="low" />
+                    <span>Below 10 Million</span>
+                  </label>
+                </div>
+              </div>
+              <div class="content">
+                <div class="content__heading">
+                  <div class="title">price</div>
+                </div>
+                <div class="content__items" id="price">
+                  <label
+                    ><input type="checkbox" rel="high" />
+                    <span>20 Million or more</span>
+                  </label>
+                  <label
+                    ><input type="checkbox" rel="normal" />
+                    <span>10 - 20 Million</span>
+                  </label>
+                  <label
+                    ><input type="checkbox" rel="low" />
+                    <span>Below 10 Million</span>
+                  </label>
+                </div>
+              </div>
+              <div class="content">
+                <div class="content__heading">
+                  <div class="title">price</div>
+                </div>
+                <div class="content__items" id="price">
+                  <label
+                    ><input type="checkbox" rel="high" />
+                    <span>20 Million or more</span>
+                  </label>
+                  <label
+                    ><input type="checkbox" rel="normal" />
+                    <span>10 - 20 Million</span>
+                  </label>
+                  <label
+                    ><input type="checkbox" rel="low" />
+                    <span>Below 10 Million</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="footerFilter">
+              <div class="footerBtn">
+                <button id="reset" onclick="resetCbs()">Reset</button>
+                <button id="apply" onclick="">Apply Filters</button>
+              </div>
             </div>
           </div>
 
           <div class="items-container">
             <div class="items">
               <div class="item">
+                <div class="item__heart">
+                  <img
+                    class="outline"
+                    src="./assets/scss/themes/default/icon/heart-outline-icon.svg"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/scss/themes/default/icon/heart-filled-icon.svg"
+                    alt=""
+                    class="fill"
+                  />
+                </div>
                 <div class="item__tag">
-                  <div class="gift">
-                    <img
-                      src="./assets/scss/themes/default/icon/gift.png"
-                      alt=""
-                    />
-                    <span>free gift</span>
-                  </div>
+                  <div class="new">new</div>
+                  <div class="discount">sale</div>
                 </div>
                 <div class="item__content">
                   <div class="item__img placeholder">
@@ -308,7 +404,8 @@
                   <div class="item__container">
                     <div class="code">EBB2802H-H</div>
                     <div class="name">
-                      253L NutriFresh® inverter bottom mount refrigerator - black
+                      253L NutriFresh® inverter bottom mount refrigerator -
+                      black
                     </div>
                     <div class="rate">
                       <div class="rating-group">
@@ -499,8 +596,8 @@
                 </div>
                 <ul class="item__description">
                   <li>
-                    360 Cooling maintains a stable temperature to keep food fresh
-                    for longer.
+                    360 Cooling maintains a stable temperature to keep food
+                    fresh for longer.
                   </li>
                   <li>XL Freezer enables you to store more</li>
                 </ul>
@@ -509,11 +606,23 @@
                   <button class="research">learn more</button>
                 </div>
                 <label class="compare">
-                  <input type="checkbox" onchange="change()" />
-                  Add to Compare
+                  <input type="checkbox" />
+                  <span>Add to Compare</span>
                 </label>
               </div>
               <div class="item">
+                <div class="item__heart">
+                  <img
+                    class="outline"
+                    src="./assets/scss/themes/default/icon/heart-outline-icon.svg"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/scss/themes/default/icon/heart-filled-icon.svg"
+                    alt=""
+                    class="fill"
+                  />
+                </div>
                 <div class="item__tag">
                   <div class="new">new</div>
                   <div class="bundle">bundle</div>
@@ -727,11 +836,23 @@
                   <button class="research">learn more</button>
                 </div>
                 <label class="compare">
-                  <input type="checkbox" onchange="change()" />
+                  <input type="checkbox" />
                   Add to Compare
                 </label>
               </div>
               <div class="item">
+                <div class="item__heart">
+                  <img
+                    class="outline"
+                    src="./assets/scss/themes/default/icon/heart-outline-icon.svg"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/scss/themes/default/icon/heart-filled-icon.svg"
+                    alt=""
+                    class="fill"
+                  />
+                </div>
                 <div class="item__tag">
                   <div class="new">new</div>
                   <div class="discount">sale</div>
@@ -951,11 +1072,23 @@
                   <button class="research">learn more</button>
                 </div>
                 <label class="compare">
-                  <input type="checkbox" onchange="change()" />
+                  <input type="checkbox" />
                   Add to Compare
                 </label>
               </div>
               <div class="item">
+                <div class="item__heart">
+                  <img
+                    class="outline"
+                    src="./assets/scss/themes/default/icon/heart-outline-icon.svg"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/scss/themes/default/icon/heart-filled-icon.svg"
+                    alt=""
+                    class="fill"
+                  />
+                </div>
                 <div class="item__tag">
                   <div class="new">new</div>
                   <div class="discount">sale</div>
@@ -1167,11 +1300,23 @@
                   <button class="research">learn more</button>
                 </div>
                 <label class="compare">
-                  <input type="checkbox" onchange="change()" />
+                  <input type="checkbox" />
                   Add to Compare
                 </label>
               </div>
               <div class="item">
+                <div class="item__heart">
+                  <img
+                    class="outline"
+                    src="./assets/scss/themes/default/icon/heart-outline-icon.svg"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/scss/themes/default/icon/heart-filled-icon.svg"
+                    alt=""
+                    class="fill"
+                  />
+                </div>
                 <div class="item__tag">
                   <div class="discount">sale</div>
                 </div>
@@ -1390,11 +1535,23 @@
                   <button class="research">learn more</button>
                 </div>
                 <label class="compare">
-                  <input type="checkbox" onchange="change()" checked="checked" />
+                  <input type="checkbox" checked="checked" />
                   Add to Compare
                 </label>
               </div>
               <div class="item">
+                <div class="item__heart">
+                  <img
+                    class="outline"
+                    src="./assets/scss/themes/default/icon/heart-outline-icon.svg"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/scss/themes/default/icon/heart-filled-icon.svg"
+                    alt=""
+                    class="fill"
+                  />
+                </div>
                 <div class="item__tag">
                   <div class="bundle">bundle</div>
                   <!-- <div class="bundle">bundle</div> -->
@@ -1606,7 +1763,7 @@
                   <button class="research">learn more</button>
                 </div>
                 <label class="compare">
-                  <input type="checkbox" onchange="change()" checked="checked" />
+                  <input type="checkbox" checked="checked" />
                   Add to Compare
                 </label>
               </div>
@@ -1614,7 +1771,21 @@
           </div>
         </div>
       </section>
+      <div class="contact-icon">
+        <img
+          id="mobile"
+          src="./assets/scss/themes/default/icon/contact-mobile.png"
+          alt=""
+        />
+        <img
+          id="desktop"
+          src="./assets/scss/themes/default/icon/contact.png"
+          alt=""
+        />
+      
+      </div>
     </div>
+    
     <footer id="footer">
       <div class="option__list">
         <div class="container">
@@ -1714,20 +1885,7 @@
               <li></li>
             </ul>
           </div>
-          <div class="contact-icon">
-            <img
-              id="mobile"
-              src="./assets/scss/themes/default/icon/contact-mobile.png"
-              alt=""
-            />
-            <img
-              id="desktop"
-              src="./assets/scss/themes/default/icon/contact.png"
-              alt=""
-            />
-            <!-- data-srcset="
-            ./assets/scss/themes/electrolux/icon/contact.png 600w"  -->
-          </div>
+          
         </div>
       </div>
       <div class="container">
@@ -1811,8 +1969,8 @@
       responsive: {
         600: {
           nav: true,
-        }
-      }
+        },
+      },
     });
     $(document).on("click", ".owl-item>div", function () {
       owl.trigger("to.owl.carousel", [$(this).data("position"), 300]);

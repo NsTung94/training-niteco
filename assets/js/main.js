@@ -6,12 +6,14 @@ for (var i = 0; i < x.length; i++) {
 
 var footer = document.getElementById("footer");
 var filter = document.getElementById("filter");
+var filterBtn = document.querySelector('.footerBtn');
 
 function reachBottom(entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       // hide
       filter.classList.add("hideBtn");
+      filterBtn.style.display = 'none'
     } else {
       // show button
       filter.classList.remove("hideBtn");
@@ -23,11 +25,13 @@ observer.observe(footer);
 
 var topPage = document.getElementById("header");
 
+
 function reachTop(entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       // hide
       filter.classList.add("hideBtn");
+      filterBtn.style.display = "none";
     } else {
       // show button
       filter.classList.remove("hideBtn");
@@ -69,23 +73,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let selector = document.getElementById("selector");
 let selectSort = document.getElementById("selectSort");
-let reset = document.querySelector('.refresh');
+let selectorHeader = document.querySelector('.selector__header');
+selectorHeader.addEventListener("click", showSelector);
+let applyBtn = document.querySelector('#apply');
+applyBtn.addEventListener("click", showSelector);
+
 function showSelector() {
   if (selector.classList.contains("showSelector")) {
     selector.classList.remove("showSelector");
-    reset.classList.remove('show');
+    
   } else {
     selector.classList.add("showSelector");
     selectSort.classList.remove('showSort');
-    reset.classList.add('show');
     
   }
 }
 
+let hearts = document.querySelectorAll('.item__heart');
+heartItems = [].slice.call(hearts);
 
+heartItems.forEach(function(item){
+  item.addEventListener('click', function(){
+    if(item.classList.contains('clicked')){
+      item.classList.remove('clicked')
+    }else{
+      item.classList.add('clicked')
+    }
+  })
+})
+
+let contentSelector = document.querySelectorAll('.selector__container .content');
+
+contents = [].slice.call(contentSelector);
+
+contents.forEach(function(item){
+  var headingBtn = item.querySelector('.content__heading');
+  headingBtn.addEventListener('click', function(){
+    if(item.classList.contains('showContent')){
+      item.classList.remove('showContent')
+    }
+    else{
+      item.classList.add('showContent')
+    }
+  })
+})
 
 function showSort() {
-  reset.classList.remove('show')
+
   if (selectSort.classList.contains("showSort")) {
     selectSort.classList.remove("showSort");
     
@@ -123,7 +157,9 @@ let original = list.querySelectorAll(".item");
 var nodesToSort = list.querySelectorAll(".item");
 // console.log("nodesToSort", nodesToSort)
 
+var sortBtn = document.querySelector('.sort span')
+sortBtn.setAttribute('data-after',': Default')
 function changeSortBy(name){
-  document.getElementById("demo").innerHTML = name;
+  sortBtn.setAttribute('data-after', name);
 }
 
