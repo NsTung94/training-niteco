@@ -50,7 +50,6 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        transition: all 0.5s;
         &__heading {
           font-size: 14px;
           font-weight: 600;
@@ -80,7 +79,7 @@
         position: fixed;
         border: 1px solid var(--primary-color);
         z-index: 100;
-        transition: s;
+        transition: 1s;
         button {
           border: none;
           background: white;
@@ -103,6 +102,7 @@
       position: fixed;
       width: 100%;
       bottom: 0;
+      left: 0;
       height: 0;
       display: flex;
       flex-direction: column;
@@ -313,7 +313,6 @@
         .selectSort {
           position: absolute;
           top: 30px;
-          transition: 0.5s;
           &__heading {
             margin: 0;
           }

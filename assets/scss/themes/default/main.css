@@ -660,7 +660,6 @@ footer .container .copyright {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all 0.5s;
 }
 .product__filter .sort .selectSort__heading {
   font-size: 14px;
@@ -690,7 +689,7 @@ footer .container .copyright {
   position: fixed;
   border: 1px solid var(--primary-color);
   z-index: 100;
-  transition: s;
+  transition: 1s;
 }
 .product__filter .sort .showSort button {
   border: none;
@@ -710,6 +709,7 @@ footer .container .copyright {
   position: fixed;
   width: 100%;
   bottom: 0;
+  left: 0;
   height: 0;
   display: flex;
   flex-direction: column;
@@ -910,7 +910,6 @@ footer .container .copyright {
   .product__filter .sort .selectSort {
     position: absolute;
     top: 30px;
-    transition: 0.5s;
   }
   .product__filter .sort .selectSort__heading {
     margin: 0;
