@@ -63,7 +63,7 @@ footer {
   .container {
     display: flex;
     flex-direction: column;
-    // padding-right: 25px;
+    align-items: stretch;
     .connect {
       margin-bottom: 50px;
       .social {
@@ -115,22 +115,27 @@ footer {
     .option__list {
       display: flex;
       flex-direction: column;
-      height: 400px;
+      height: 375px;
       flex-wrap: wrap;
 
       padding: 30px 140px;
       .container {
         position: relative;
         flex-direction: column;
+        justify-content: space-between;
         
       }
     }
     .option__item {
       .content {
+        position:relative;
         display: block;
         color: white;
+        height: auto;
+        margin-bottom: 0;
       }
       ul {
+        margin-top:auto;
         padding: 0;
         li {
           font-size: 14px;
