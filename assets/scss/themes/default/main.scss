@@ -10,8 +10,10 @@
 @import "../default/components/hero";
 @import "../default/components/placeholder";
 @import "../default/components/product";
+@import "../default/components/contact";
 
 .container {
+  position: relative;
   margin-top: 20px;
   overflow: hidden;
   margin: 0 15px;
