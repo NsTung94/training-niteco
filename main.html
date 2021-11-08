@@ -95,7 +95,7 @@
             src="./assets/scss/themes/default/icons/chevron-left.svg"
             alt=""
           />
-          <a href="#">Trở về trang chủ</a>
+          <a href="#">Back to Homepage</a>
         </button>
         <ul class="pagination">
           <li><a href="#">Home</a></li>
@@ -185,6 +185,24 @@
               />
             </div>
             <div class="type">Dishwashers</div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <img
+                src="./assets/scss/themes/default/icon/vacuum-cleaner.png"
+                alt=""
+              />
+            </div>
+            <div class="type">Vacuum Cleaners</div>
+          </div>
+          <div class="item">
+            <div class="icon">
+              <img
+                src="./assets/scss/themes/default/icon/vacuum-cleaner.png"
+                alt=""
+              />
+            </div>
+            <div class="type">Vacuum Cleaners</div>
           </div>
           <div class="item">
             <div class="icon">
@@ -1960,15 +1978,18 @@
       ],
       items: 3,
       center: true,
-      loop: true,
+      // loop: true,
       lazyLoad: true,
       nav: false,
       dots: false,
-      responsiveClass: true,
       autoWidth: true,
+      autoWidth: true,
+      responsiveClass: true,
       responsive: {
         600: {
+          center: false,
           nav: true,
+          item: 8,
         },
       },
     });
