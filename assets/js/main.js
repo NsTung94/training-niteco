@@ -13,10 +13,11 @@ function reachBottom(entries) {
     if (entry.isIntersecting) {
       // hide
       filter.classList.add("hideBtn");
-      filterBtn.style.display = 'none'
+      filterBtn.style.display = 'none';
     } else {
       // show button
       filter.classList.remove("hideBtn");
+      filterBtn.style.display = 'flex';
     }
   });
 }
@@ -35,6 +36,7 @@ function reachTop(entries) {
     } else {
       // show button
       filter.classList.remove("hideBtn");
+      filterBtn.style.display = "flex";
     }
   });
 }
