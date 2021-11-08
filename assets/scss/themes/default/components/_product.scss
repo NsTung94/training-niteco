@@ -32,8 +32,13 @@
     .filter .refresh {
       display: none;
     }
-    .filter__button span {
-      text-transform: uppercase;
+    .filter__button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      span {
+        text-transform: uppercase;
+      }
     }
     .sort {
       .desktop {
@@ -75,16 +80,21 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 100%;
+        height: 300px;
         position: fixed;
         overflow: hidden;
-        bottom: 80px;
+        bottom: 0;
         left: 0;
         left: 50%;
         transform: translateX(-50%);
         background-color: white;
         border: 1px solid var(--primary-color);
         z-index: 100;
+        button {
+          border: none;
+          background: white;
+          
+        }
       }
     }
   }
@@ -93,21 +103,140 @@
     flex-wrap: wrap;
     .selector {
       position: fixed;
-      left: 0;
+      width: 100%;
       bottom: -100%;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      &__heading {
-        font-size: 14px;
+      transition: 0.5s;
+      
+      &__header {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 60px;
+        background-color: rgba(0, 0, 0, 0.1);
+        font-size: 24px;
+        gap: 15px;
+        padding: 0 10px;
         font-weight: 600;
         text-transform: uppercase;
-        margin: 25px 0 24px;
+        #close {
+          position: absolute;
+          right:0 ;
+          top: 50%;
+          transform: translateY(-50%);
+        }
       }
-      .dealType,
-      .price {
-        display: flex;
-        flex-direction: column;
+      .footerFilter{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        .footerBtn {   
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 0 10px 15px;
+          gap: 15px;
+          height: 52px;
+          background-color: white;
+          button {
+            text-transform: uppercase;
+            padding: 9px;
+            font-size: 14px; 
+            font-weight: 600;
+            width: calc(50%);
+            border: 1px solid var(--primary-color);
+            border-radius: 2px;
+            background-color: white;
+            color: var(--primary-color);
+            
+          }
+          #apply {
+            background-color: var(--primary-color);
+            color: white;
+          }
+        }
+      }
+    
+      &__container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+        margin: 0 5px 5px;
+        border: 0.5px solid rgba(0, 0, 0, 0.1);
+        padding: 20px 10px 50px;
+
+        .content {
+          position: relative;
+          padding-bottom: 10px;
+          &:after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 95%;
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+          &__heading {
+            position: relative;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 25px 0 24px;
+            &:before {
+              display: block;
+              position: absolute;
+              content: "";
+              width: 2px;
+              height: 14px;
+              top: calc(50% - 7px);
+              right: 6px;
+              background-color: #011e41;
+            }
+            &:after {
+              position: absolute;
+              content: "";
+              width: 14px;
+              height: 2px;
+              top: calc(50% - 1px);
+              right: 0;
+              background-color: #011e41;
+            }
+          }
+          &__items{
+            label input[type="checkbox"]{
+              margin-right: 15px;
+            }
+            overflow: hidden;
+            height: 0;
+            transition: 0.5s;
+
+          }
+        }
+
+       
+        .showContent {
+          .content {
+            &__heading{
+              &:before {
+                display: none;
+              }
+            }
+            
+            &__items{
+              height: 100px;
+              transition: 0.5s;
+            }
+          }
+
+        }
       }
     }
     .items-container {
@@ -124,7 +253,7 @@
             position: absolute;
             right: 0;
             top: 0;
-            .outline{
+            .outline {
               display: block;
             }
             .fill {
@@ -132,7 +261,7 @@
             }
           }
           .clicked {
-            .outline{
+            .outline {
               display: none;
             }
             .fill {
@@ -404,7 +533,7 @@
 
 @media screen and (max-width: 1020px) {
   .product__items .showSelector {
-    padding: 30px;
+    padding: 10px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -412,12 +541,13 @@
     justify-content: center;
     position: fixed;
     overflow: hidden;
-    bottom: 80px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
     border: 1px solid var(--primary-color);
-    z-index: 100;
+    transition: 0.5s;
+    z-index: 10;
   }
   .product__filter .filter .show {
     display: block;
@@ -498,8 +628,9 @@
           top: 48px;
           background-color: white;
           border: 1px solid var(--primary-color);
-          transition: all 0.1s ease-in-out;
+          transition: 0.1s ;
           z-index: 100;
+          
         }
       }
     }
@@ -510,25 +641,29 @@
         position: relative;
         display: flex;
         width: 20%;
-        .dealType {
-          position: relative;
-          padding-bottom: 24px;
-          &:after {
-            position: absolute;
-            content: "";
-            bottom: 0;
-            left: 0;
-            height: 1px;
-            width: 185px;
-            background-color: rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        &__container {
+          .dealType {
+            position: relative;
+            padding-bottom: 24px;
+            &:after {
+              position: absolute;
+              content: "";
+              bottom: 0;
+              left: 0;
+              height: 1px;
+              width: 185px;
+              background-color: rgba(0, 0, 0, 0.1);
+            }
           }
-        }
-        .dealType, .price {
-          label input[type="checkbox"]{
-            margin-right: 15px;
-          }
-          .disable {
-            opacity: 0.5;
+          .dealType,
+          .price {
+            label input[type="checkbox"] {
+              margin-right: 15px;
+            }
+            .disable {
+              opacity: 0.5;
+            }
           }
         }
       }
