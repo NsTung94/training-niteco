@@ -30,10 +30,24 @@ body {
   font-family: "Electrolux";
 }
 
-.wrapper {
-  width: 375px;
-  margin: 0 auto;
+button {
+  background-color: #ffffff;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+    transition: all 0.1s ease-in-out;
+  }
 }
+
+input[type="checkbox"]{
+  transform: scale(1.5);
+}
+
+label {
+  margin-bottom: 16px;
+}
+
 
 @media screen and (min-width: 1200px) {
   .container {

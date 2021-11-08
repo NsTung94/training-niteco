@@ -62,6 +62,7 @@
 .owl-item.center > div {
   cursor: auto;
   margin: 0;
+  border: 1.5px solid var(--primary-color);
 }
 
 .category {
@@ -128,8 +129,9 @@
         }
         &:hover {
           border-radius: 4px;
-          border: 2px solid var(--primary-color);
-          margin: 0 -2px;
+          border: 1.5px solid var(--primary-color);
+          opacity: 0.8;
+          transition: all 0.3 ease-in-out;
         }
       }
     }

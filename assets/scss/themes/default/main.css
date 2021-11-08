@@ -176,6 +176,7 @@ table {
 .owl-item.center > div {
   cursor: auto;
   margin: 0;
+  border: 1.5px solid var(--primary-color);
 }
 
 .category {
@@ -245,8 +246,9 @@ table {
   }
   .category__list .item:hover {
     border-radius: 4px;
-    border: 2px solid var(--primary-color);
-    margin: 0 -2px;
+    border: 1.5px solid var(--primary-color);
+    opacity: 0.8;
+    transition: all 0.3 ease-in-out;
   }
 }
 footer .option__list {
@@ -448,7 +450,7 @@ footer .container .copyright {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: auto;
+  width: 100%;
   margin: 0 15px;
 }
 .header .navigation__link {
@@ -1004,6 +1006,8 @@ footer .container .copyright {
     position: relative;
     width: 100%;
     padding: 0;
+    height: 20px;
+    margin-bottom: 40px;
   }
   .product__filter .filter,
 .product__filter .sort {
@@ -1036,6 +1040,7 @@ footer .container .copyright {
     position: relative;
     justify-content: flex-end;
     margin-right: 20px;
+    font-size: 16px;
   }
   .product__filter .sort .desktop {
     display: block;
@@ -1070,6 +1075,25 @@ footer .container .copyright {
     position: relative;
     display: flex;
     width: 20%;
+  }
+  .product__items .selector .dealType {
+    position: relative;
+    padding-bottom: 24px;
+  }
+  .product__items .selector .dealType:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 185px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .product__items .selector .dealType label input[type=checkbox], .product__items .selector .price label input[type=checkbox] {
+    margin-right: 15px;
+  }
+  .product__items .selector .dealType .disable, .product__items .selector .price .disable {
+    opacity: 0.5;
   }
   .product__items .items-container {
     width: 80%;
@@ -1146,7 +1170,7 @@ footer .container .copyright {
   }
   .product__items .items-container .items .item__content {
     flex-direction: column;
-    margin-top: 26px;
+    margin-top: 28px;
   }
   .product__items .items-container .items .item__img {
     text-align: center;
@@ -1208,6 +1232,9 @@ footer .container .copyright {
     font-size: 16px;
     line-height: 22px;
   }
+  .product__items .items-container .items .item .compare input[type=checkbox] {
+    margin-right: 10px;
+  }
 }
 .container {
   margin-top: 20px;
@@ -1228,9 +1255,21 @@ body {
   font-family: "Electrolux";
 }
 
-.wrapper {
-  width: 375px;
-  margin: 0 auto;
+button {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.9;
+  transition: all 0.1s ease-in-out;
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
+label {
+  margin-bottom: 16px;
 }
 
 @media screen and (min-width: 1200px) {
