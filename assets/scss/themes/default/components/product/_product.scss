@@ -1,251 +1,12 @@
+@import './filterSort';
+
 .product {
   position: relative;
 
-  &__filter {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    width: 100%;
-    height: 80px;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffff;
-    padding: 0 15px;
-    z-index: 99;
-
-    .filter,
-    .sort {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      padding: 0 20px;
-      width: 120px;
-      height: 48px;
-      font-size: 14px;
-      line-height: 24px;
-      font-weight: 600;
-      background-color: white;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    .filter .refresh {
-      display: none;
-    }
-    .filter__button {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      span {
-        text-transform: uppercase;
-      }
-      &:after{
-        content: none;
-      }
-    }
-    .sort {
-      
-      .selectSort {
-        position: fixed;
-        width: 100%;
-        height: 0;
-        bottom: 0;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        transition: all 0.5s;
-        &__heading {
-          font-size: 14px;
-          font-weight: 600;
-          text-transform: uppercase;
-        }
-        .option {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          button {
-            line-height: 30px;
-          }
-          img {
-            margin-left: 15px;
-          }
-        }
-      }
-      .showSort {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        border: 1px solid var(--primary-color);
-        z-index: 100;
-        transition: s;
-        button {
-          border: none;
-          background: white;
-        }
-        .overlay {
-          width: 100%;
-          height: 80%;
-          background-color: rgba(0, 0, 0, 0.5);
-        }
-        .list {
-          width: 100%;
-          background-color: white;
-          height: 150px;
-        }
-        
-      }
-    }
-  }
   &__items {
     display: flex;
     flex-wrap: wrap;
-    .selector {
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-      height: 0;
-      display: flex;
-      flex-direction: column;
-      transition: 1s;
-      
-      &__header {
-        position: relative;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        height: 60px;
-        background-color: rgba(0, 0, 0, 0.1);
-        font-size: 24px;
-        gap: 15px;
-        padding: 0 10px;
-        font-weight: 600;
-        text-transform: uppercase;
-        #close {
-          position: absolute;
-          right:0 ;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-        .icon {
-          width: 30px;
-        }
-      }
-      .footerFilter{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: 100;
-        .footerBtn {   
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin: 0 10px 15px;
-          gap: 15px;
-          height: 52px;
-          background-color: white;
-          button {
-            text-transform: uppercase;
-            padding: 9px;
-            font-size: 14px; 
-            font-weight: 600;
-            width: calc(50%);
-            border: 1px solid var(--primary-color);
-            border-radius: 2px;
-            background-color: white;
-            color: var(--primary-color);
-            
-          }
-          #apply {
-            background-color: var(--primary-color);
-            color: white;
-          }
-        }
-      }
     
-      &__container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: scroll;
-        margin: 0 5px 5px;
-        border: 0.5px solid rgba(0, 0, 0, 0.1);
-        padding: 20px 10px 50px;
-
-        .content {
-          position: relative;
-          padding: 0 10px 10px 0 ;
-          &:after {
-            position: absolute;
-            content: "";
-            bottom: 0;
-            left: 0;
-            height: 1px;
-            width: 95%;
-            background-color: rgba(0, 0, 0, 0.1);
-          }
-          &__heading {
-            position: relative;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin: 25px 0 24px;
-            &:before {
-              display: block;
-              position: absolute;
-              content: "";
-              width: 2px;
-              height: 14px;
-              top: calc(50% - 7px);
-              right: 6px;
-              background-color: #011e41;
-            }
-            &:after {
-              position: absolute;
-              content: "";
-              width: 14px;
-              height: 2px;
-              top: calc(50% - 1px);
-              right: 0;
-              background-color: #011e41;
-            }
-          }
-          &__items{
-            label input[type="checkbox"]{
-              margin-right: 15px;
-            }
-            overflow: hidden;
-            height: 0;
-            transition: 0.5s;
-
-          }
-        }
-
-       
-        .showContent {
-          .content {
-            &__heading{
-              &:before {
-                display: none;
-              }
-            }
-            
-            &__items{
-              height: 100px;
-              transition: 0.5s;
-            }
-          }
-
-        }
-      }
-    }
     .items-container {
       width: 100%;
       .items {
@@ -256,6 +17,7 @@
           display: flex;
           flex-direction: column;
           position: relative;
+          width: 100%;
           &__heart {
             position: absolute;
             right: 0;
@@ -538,142 +300,15 @@
   display: none;
 }
 
-@media screen and (max-width: 1020px) {
-  .product__items .showSelector {
-    padding: 10px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    overflow: hidden;
-    bottom: 0;
-    background-color: white;
-    border: 1px solid var(--primary-color);
-    transition: 1s;
-    z-index: 99;
-  }
-  .product__filter .filter .show {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9;
-  }
-}
-
 @media screen and (min-width: 1200px) {
   .product {
     display: flex;
     flex-direction: column;
-    &__filter {
-      display: flex;
-      position: relative;
-      width: 100%;
-      padding: 0;
-      height: 20px;
-      margin-bottom: 40px;
-      .filter,
-      .sort {
-        border: none;
-        width: 200px;
-        padding: 0;
-        cursor: auto;
-        
-      }
-
-      .filter {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 20px;
-        font-weight: 600;
-        width: 20%;
-        .icon {
-          display: none;
-        }
-        .refresh {
-          display: block;
-          position: relative;
-          cursor: pointer;
-          span {
-            font-size: 16px;
-            font-weight: 400;
-          }
-        }
-      }
-      .sort {
-        position: relative;
-        justify-content: flex-end;
-        margin-right: 20px;
-        font-size: 16px;
-        .desktop {
-          display: block;
-        }
-        .selectSort {
-          position: absolute;
-          top: 30px;
-          transition: 0.5s;
-          &__heading {
-            margin: 0;
-          }
-          .list .option button {
-            padding: 0 10px;
-          }
-        }
-        span {
-          &:after{
-            content: attr(data-after);
-            font-size: 16px;
-            margin-right: 15px;
-          }
-        }
-
-        .showSort {
-          position: absolute;
-          display: flex;
-          align-items: flex-start;
-          justify-content: flex-start;
-          margin: 0 15px;
-          height: 130px;
-          border-radius: 4px;
-          overflow: hidden;
-          top: 48px;
-          box-shadow: 0 3px 6px rgb(0 0 0 / 15%);
-          visibility: visible;
-          border: none;
-          transition: 1s ;
-          z-index: 100;
-          .overlay {
-            display: none;
-          }
-        }
-      }
-    }
+    
     &__items {
       display: flex;
       justify-content: flex-start;
-      .selector {
-        position: relative;
-        display: flex;
-        width: 20%;
-        height: 100%;
-        z-index: 100;
-        &__header {
-          display: none;
-        }
-        &__container {
-          margin: 0;
-          padding: 0;
-          border: none;
-          overflow: unset;
-        }
-        .footerFilter {
-          display: none;
-        }
-      }
+      
       .items-container {
         width: 80%;
         padding: 0 20px;
@@ -777,7 +412,7 @@
             &__price {
               order: 2;
               display: flex;
-              align-items: flex-end;
+              align-items: baseline;
               margin-top: auto;
               .new {
                 font-size: 24px;

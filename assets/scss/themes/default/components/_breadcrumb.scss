@@ -3,6 +3,10 @@
   &__back {
     background-color: white;
     border: none;
+    a {
+      font-size: 14px;
+      font-weight: 600;
+    }
   }
   a {
     text-decoration: none;
@@ -34,10 +38,13 @@
         font-size: 14px;
         font-weight: 600;
         line-height: 26px;
+        opacity: 0.5;
       }
       li + li a {
         text-decoration: underline;
+        opacity: 1;
       }
     }
   }
+
 }
