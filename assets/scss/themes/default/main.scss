@@ -11,6 +11,8 @@
 @import "../default/components/placeholder";
 @import "../default/components/product/product";
 @import "../default/components/contact";
+@import "../default/components/menu";
+
 
 .container {
   position: relative;
@@ -30,6 +32,7 @@ html {
 body {
   color: var(--primary-color);
   font-family: "Electrolux";
+  margin: 0;
 }
 
 button {
@@ -44,12 +47,17 @@ button {
 
 input[type="checkbox"]{
   transform: scale(1.5);
+  cursor: pointer;
 }
 
 label {
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+}
+.disable {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 

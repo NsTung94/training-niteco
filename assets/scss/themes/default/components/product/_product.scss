@@ -2,7 +2,8 @@
 
 .product {
   position: relative;
-
+  width: 100%;
+  margin-top: 30px;
   &__items {
     display: flex;
     flex-wrap: wrap;
@@ -22,6 +23,7 @@
             position: absolute;
             right: 0;
             top: 0;
+            cursor: pointer;
             .outline {
               display: block;
             }
@@ -265,7 +267,6 @@
             width: 100%;
             .add,
             .research {
-              font-family: "Electrolux";
               display: block;
               width: 100%;
               text-transform: uppercase;
@@ -278,7 +279,6 @@
               border-radius: 2px;
             }
             .add {
-              font-family: "Electrolux";
               background-color: var(--primary-color);
               color: white;
               margin-bottom: 5px;

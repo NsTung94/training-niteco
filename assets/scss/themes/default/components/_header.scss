@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     height: 63px;
     margin: 0 15px;
     &__logo {
@@ -16,7 +15,6 @@
       align-items: center;
       justify-content: flex-end;
       width: 100%;
-      margin: 0 15px;
       &__link {
         display: none;
       }
@@ -25,7 +23,7 @@
         align-items: center;
         padding: 0;
         .navigation__icon {
-          margin-right: 15px;
+          margin-left: 15px;
 
           button {
             background-color: transparent;
@@ -101,8 +99,8 @@
             .dropdown {
               display: none;
               position: absolute;
-              background-color: var(--primary-color);
-              color: white;
+              box-shadow: 0 3px 6px rgb(0 0 0 / 15%);
+              color: var(--primary-color);
               top: 20px;
               left: -10px;
               padding: 10px;
