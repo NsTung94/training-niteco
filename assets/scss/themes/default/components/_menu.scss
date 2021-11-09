@@ -21,9 +21,7 @@
     overflow-x: hidden;
 
     .main-menu-heading {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
+      @include flexBox(center, flex-end);
       span {
         height: 18px;
         font-weight: 600;
@@ -47,9 +45,7 @@
         cursor: pointer;
         
       }
-      .heading {
-        
-        height: 70px;
+      .heading {  
         .hasIcon {
           display: flex;
           align-items: center;
@@ -104,16 +100,14 @@
 
       }
       .active {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
+        @include flexBox(auto, flex-start, auto, column);
         transform: translateX(0);
         transition: transform 0.4s;
-        overflow: hidden;
+        
       }
     }
     &-item {
-      height: 60px;
+      
       padding: 20px;
       border-bottom:1px solid rgba(0, 0, 0, 0.1);
       .heading {
@@ -138,14 +132,13 @@
       }
     }
     &-productList {
-      padding: 0 20px 13px;
-      margin-top: 13px;
+      padding: 0 20px 25px;
+      margin-top: 25px;
     }
     .menu-item {
       position: relative;
       a {
-        display: flex;
-        align-items: center;
+        @include flexBox(center);
         gap: 10px;
         text-decoration: none;
         color: var(--primary-color);

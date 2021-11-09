@@ -14,9 +14,9 @@
   width: fit-content;
 }
 .owl-stage {
-  width: 1180px;
+  width: 150%;
   display: flex;
-  overflow: hidden;
+  // overflow: hidden;
   flex-wrap: nowrap;
 }
 .owl-prev,
@@ -84,9 +84,9 @@
       font-size: 14px;
       line-height: 18px;
       font-weight: 400;
-      margin-right: 5px;
       display: block;
-      width: fit-content;
+      margin: 0 8px;
+      min-width: fit-content;
       height: 60px;
       text-align: center;
       padding: 11px 18px;
@@ -99,9 +99,7 @@
         font-weight: 600;
         font-size: 16px;
       }
-     
     }
-    
   }
 }
 
@@ -118,14 +116,15 @@
     &__list {
       height: 188px;
       .carousel-item {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
+        @include flexBox(center, space-between, auto, column);
         height: 156px;
-        min-width: 128px;
+        width: 130px;
+        max-width: 135px;
+        margin: 0 10px;
+        min-width: 120px;
+        
         line-height: 19.6px;
-        padding: 25px 0;
+        padding: 25px 10px;
         border: none;
 
         .icon {

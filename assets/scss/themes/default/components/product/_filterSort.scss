@@ -4,21 +4,19 @@
     bottom: 0;
     left: 0;
     right: 0;
-    display: flex;
+    @include flexBox(center, space-between);
     width: 100%;
     height: 80px;
-    justify-content: space-between;
-    align-items: center;
     background-color: #ffffff;
     padding: 0 15px;
     z-index: 99;
-
+    .numberItem {
+      display: none;
+    }
     .filter,
     .sort {
+      @include flexBox(center, space-around);
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
       padding: 0 20px;
       width: 120px;
       height: 48px;
@@ -32,8 +30,7 @@
       display: none;
     }
     .filter__button {
-      display: flex;
-      align-items: center;
+      @include flexBox(center);
       gap: 10px;
       span {
         text-transform: uppercase;
@@ -49,18 +46,14 @@
         height: 0;
         bottom: 0;
         overflow: hidden;
-        display: flex;
-        flex-direction: column;
+        @include flexBox();
         &__heading {
           font-size: 14px;
           font-weight: 600;
           text-transform: uppercase;
         }
         .option {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
+          @include flexBox(center, center);
           button {
             line-height: 30px;
           }
@@ -70,10 +63,7 @@
         }
       }
       .showSort {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+        @include flexBox(center, center);
         left: 0;
         width: 100%;
         height: 100%;
@@ -109,16 +99,13 @@
       right: 0;
       left: 0;
       height: 0;
-      display: flex;
-      flex-direction: column;
+      @include flexBox();
       transition: 1s;
 
       &__header {
         position: relative;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        @include flexBox(center);
         height: 60px;
         background-color: rgba(0, 0, 0, 0.1);
         font-size: 24px;
@@ -143,10 +130,8 @@
         width: 100%;
         z-index: 100;
         .footerBtn {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin: 0 10px 15px;
+          @include flexBox(center, space-between);
+          margin: 0 20px 15px;
           gap: 15px;
           height: 52px;
           background-color: white;
@@ -155,7 +140,7 @@
             padding: 9px;
             font-size: 14px;
             font-weight: 600;
-            width: calc(50%);
+            width: calc(50% - 10px);
             border: 1px solid var(--primary-color);
             border-radius: 2px;
             background-color: white;
@@ -175,7 +160,7 @@
         overflow: scroll;
         margin: 0 5px 5px;
         border: 0.5px solid rgba(0, 0, 0, 0.1);
-        padding: 20px 10px 50px;
+        padding: 20px 20px 50px;
         .content {
           position: relative;
           padding: 0 10px 10px 0;
@@ -245,20 +230,16 @@
 }
 @media screen and (max-width: 1020px) {
   .product__items .showSelector {
-    padding: 10px;
+    @include flexBox(center, center);
     width: 100%;
     height: 100%;
-    display: flex;
     right: 0;
     left: 0;
-    align-items: center;
-    justify-content: center;
     position: fixed;
     overflow: hidden;
     bottom: 0;
     background-color: white;
     border: 1px solid var(--primary-color);
-    transition: 1s;
     z-index: 99;
   }
   .product__filter .filter .show {
@@ -289,9 +270,7 @@
       }
 
       .filter {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flexBox(center, space-between);
         font-size: 20px;
         font-weight: 600;
         width: 20%;
@@ -306,6 +285,16 @@
             font-size: 16px;
             font-weight: 400;
           }
+        }
+      }
+      .numberItem {
+        display: block;
+        width: calc(80% - 220px);
+        padding-left: 40px;
+        font-size: 20px;
+        font-weight: 600;
+        &:after {
+          content: ' Product(s)'
         }
       }
       .sort {
@@ -341,9 +330,7 @@
 
         .showSort {
           position: absolute;
-          display: flex;
-          align-items: flex-start;
-          justify-content: flex-start;
+          @include flexBox();
           margin: 0 15px;
           opacity: 1;
           height: 130px;
@@ -370,6 +357,7 @@
         width: 20%;
         height: 100%;
         z-index: 100;
+        transition: none;
         &__header {
           display: none;
         }

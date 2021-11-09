@@ -15,3 +15,11 @@
 		font-display: swap;
 	}
 }
+
+@mixin flexBox($ai: flex-start, $jc: flex-start, $wrap: wrap, $dir: row){
+	display: flex;
+	align-items: $ai;
+	justify-content: $jc;
+	flex-wrap: $wrap;
+	flex-direction: $dir;
+}

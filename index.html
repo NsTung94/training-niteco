@@ -116,7 +116,19 @@
               <div class="subMenu__item">Refrigeration</div>
               <div class="subMenu__item">Hobs</div>
               <div class="subMenu__item">Freestanding cookers</div>
-              
+              <div class="subMenu__item">Freestanding cookers</div>
+              <div class="subMenu__item">Refrigeration</div>
+              <div class="subMenu__item">Hobs</div>
+              <div class="subMenu__item">Freestanding cookers</div>
+              <div class="subMenu__item">Refrigeration</div>
+              <div class="subMenu__item">Hobs</div>
+              <div class="subMenu__item">Freestanding cookers</div>
+              <div class="subMenu__item">Refrigeration</div>
+              <div class="subMenu__item">Hobs</div>
+              <div class="subMenu__item">Freestanding cookers</div>
+              <div class="subMenu__item">Refrigeration</div>
+              <div class="subMenu__item">Hobs</div>
+              <div class="subMenu__item">Freestanding cookers</div>
             </div>
           </div>
           <div class="main-menu-heading">
@@ -175,12 +187,7 @@
               <div class="subMenu__heading">Laundry</div>
             </div>
           </div>
-          <div class="main-menu-heading disable">
-            <a class="title" href="#">Blog</a>
-            <div class="subMenu">
-              <div class="subMenu__heading">Laundry</div>
-            </div>
-          </div>
+
           <div class="main-menu-heading disable">
             <a class="title" href="#">Blog</a>
             <div class="subMenu">
@@ -346,7 +353,7 @@
             </div>
             <div class="type">Air fryers</div>
           </div>
-          <div class="carousel-item">
+          <!-- <div class="carousel-item">
             <div class="icon">
               <img
                 src="./assets/scss/themes/default/icon/refrigerator.png"
@@ -354,7 +361,7 @@
               />
             </div>
             <div class="type">Refrigerators</div>
-          </div>
+          </div> -->
           <div class="carousel-item">
             <div class="icon">
               <img
@@ -382,7 +389,7 @@
             </div>
             <div class="type">Dishwashers</div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item disable">
             <div class="icon">
               <img
                 src="./assets/scss/themes/default/icon/vacuum-cleaner.png"
@@ -400,7 +407,7 @@
             </div>
             <div class="type">Vacuum Cleaners</div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item disable">
             <div class="icon">
               <img
                 src="./assets/scss/themes/default/icon/vacuum-cleaner.png"
@@ -430,6 +437,7 @@
               <span class="reset">Reset</span>
             </div>
           </div>
+          <div class="numberItem">17</div>
           <div class="sort" onclick="showSort()">
             <span>Sort By</span>
 
@@ -1984,16 +1992,20 @@
         </div>
       </section>
       <div class="contact-icon">
-        <img
-          id="mobile"
-          src="./assets/scss/themes/default/icon/contact-mobile.png"
-          alt=""
-        />
-        <img
-          id="desktop"
-          src="./assets/scss/themes/default/icon/contact.png"
-          alt=""
-        />
+        <a href="tel:123-456-7890">
+          <img
+            id="mobile"
+            src="./assets/scss/themes/default/icon/contact-mobile.png"
+            alt=""
+          />
+        </a>
+        <a href="tel:123-456-7890">
+          <img
+            id="desktop"
+            src="./assets/scss/themes/default/icon/contact.png"
+            alt=""
+          />
+        </a>
       </div>
     </div>
 
@@ -2159,25 +2171,30 @@
 
   <script>
     var owl = $(".owl-carousel");
+    owl.children().each(function (index) {
+      console.log($(this).attr("data-position", index));
+      $(this).attr("data-position", index);
+    });
 
     owl.owlCarousel({
       navText: [
         "<span><img src='./assets/scss/themes/default/icon/Left (Stroke).png'/></span>",
         "<span><img src='./assets/scss/themes/default/icon/Path 2 (Stroke).png'/></span>",
       ],
-      items: 3,
-      center: true,
-      // loop: true,
       lazyLoad: true,
-      nav: false,
       dots: false,
-      autoWidth: true,
       responsiveClass: true,
       responsive: {
+      autoWidth: true,
+        0: {
+          center: true,
+          item: 2,
+        },
         600: {
+          autoWidth: true,
+          item: 8,
           center: false,
           nav: true,
-          item: 8,
         },
       },
     });
