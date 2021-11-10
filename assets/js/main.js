@@ -186,17 +186,13 @@ carouselItems.forEach(function (item) {
 });
 
 let allHeaders = document.querySelectorAll(".main-menu-heading");
-console.log("allHeader", allHeaders);
 allHeaders.forEach(function (header) {
   var menuToOpen = header.querySelector(".subMenu");
-  console.log("menuToOpen", menuToOpen);
   var btn = header.querySelector(".title");
   btn.addEventListener("click", function () {
     menuToOpen.classList.add("active");
     var closeSubMenuBtn = document.querySelector(".main-menu-heading .active");
-    console.log("closeSubMenuBtn", closeSubMenuBtn);
     if (closeSubMenuBtn !== null) {
-      console.log("closeSubMenuBtn", closeSubMenuBtn);
       closeSubMenuBtn.addEventListener("click", function () {
         closeSubMenuBtn.classList.remove("active");
       });
