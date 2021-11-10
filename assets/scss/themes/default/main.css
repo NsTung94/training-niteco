@@ -686,10 +686,10 @@ footer .container .copyright {
   bottom: 0;
   overflow: hidden;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  flex-direction: row;
+  align-items: auto;
+  justify-content: auto;
+  flex-wrap: auto;
+  flex-direction: column;
 }
 .product__filter .sort .selectSort__heading {
   font-size: 14px;
@@ -700,8 +700,8 @@ footer .container .copyright {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-wrap: auto;
+  flex-direction: column;
 }
 .product__filter .sort .selectSort .option button {
   line-height: 30px;
