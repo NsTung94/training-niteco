@@ -19,7 +19,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@include large {
   .breadcrumb {
     width: 1180px;
     margin: 0 auto;

@@ -1,3 +1,4 @@
+@import "./filterSelector";
 @import "./filterSort";
 @import "./itemDetail";
 @import "./itemTag";
@@ -118,7 +119,7 @@
   display: none;
 }
 
-@media screen and (min-width: 1200px) {
+@include large {
   .product {
     @include flexBox(auto, auto, auto, column);
     &__items {

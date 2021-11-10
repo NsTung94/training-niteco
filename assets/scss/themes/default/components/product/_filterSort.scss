@@ -1,373 +1,186 @@
-.product {
-  &__filter {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    @include flexBox(center, space-between);
-    width: 100%;
-    height: 80px;
-    background-color: #ffffff;
-    padding: 0 15px;
-    z-index: 99;
-    .numberItem {
-      display: none;
+.product__filter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  @include flexBox(center, space-between);
+  width: 100%;
+  height: 80px;
+  background-color: #ffffff;
+  padding: 0 15px;
+  z-index: 99;
+  .numberItem {
+    display: none;
+  }
+  .filter,
+  .sort {
+    @include flexBox(center, space-around);
+    cursor: pointer;
+    padding: 0 20px;
+    width: 120px;
+    height: 48px;
+    @include fs(14, 600, 24, 1.2);
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .filter .refresh {
+    display: none;
+  }
+  .filter__button {
+    @include flexBox(center);
+    gap: 10px;
+    span {
+      text-transform: capitalize;
     }
-    .filter,
-    .sort {
-      @include flexBox(center, space-around);
-      cursor: pointer;
-      padding: 0 20px;
-      width: 120px;
-      height: 48px;
-      font-size: 14px;
-      line-height: 24px;
-      font-weight: 600;
-      background-color: white;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    .filter .refresh {
-      display: none;
-    }
-    .filter__button {
-      @include flexBox(center);
-      gap: 10px;
-      span {
-        text-transform: uppercase;
-      }
-      &:after {
-        content: none;
-      }
-    }
-    .sort {
-      .selectSort {
-        position: fixed;
-        width: 100%;
-        height: 0;
-        bottom: 0;
-        overflow: hidden;
-        @include flexBox(auto, auto, auto, column);
-        &__heading {
-          font-size: 14px;
-          font-weight: 600;
-          text-transform: uppercase;
-        }
-        .option {
-          @include flexBox(center, center, auto, column);
-          button {
-            line-height: 30px;
-          }
-          img {
-            margin-left: 15px;
-          }
-        }
-      }
-      .showSort {
-        @include flexBox(center, center);
-        left: 0;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        border: 1px solid var(--primary-color);
-        z-index: 100;
-        transition: 1s;
-        button {
-          border: none;
-          background: white;
-        }
-        .overlay {
-          width: 100%;
-          height: 80%;
-          background-color: rgba(0, 0, 0, 0.5);
-        }
-        .list {
-          width: 100%;
-          background-color: white;
-          height: 150px;
-        }
-        .icon {
-          transform: rotate(180deg);
-        } 
-      }
+    &:after {
+      content: none;
     }
   }
-  &__items {
-    .selector {
+  .sort {
+    .selectSort {
       position: fixed;
       width: 100%;
-      bottom: 0;
-      right: 0;
-      left: 0;
       height: 0;
-      @include flexBox();
-      transition: 1s;
-
-      &__header {
-        position: relative;
-        width: 100%;
-        @include flexBox(center);
-        height: 60px;
-        background-color: rgba(0, 0, 0, 0.1);
-        font-size: 24px;
-        gap: 15px;
-        padding: 0 10px;
-        font-weight: 600;
+      bottom: 0;
+      overflow: hidden;
+      @include flexBox(auto, auto, auto, column);
+      &__heading {
+        @include fs(14, 600);
         text-transform: uppercase;
-        #close {
-          position: absolute;
-          right: 0;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-        .icon {
-          width: 30px;
-        }
       }
-      .footerFilter {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: 100;
-        .footerBtn {
-          @include flexBox(center, space-between);
-          margin: 0 20px 15px;
-          gap: 15px;
-          height: 52px;
-          background-color: white;
-          button {
-            text-transform: uppercase;
-            padding: 9px;
-            font-size: 14px;
-            font-weight: 600;
-            width: calc(50% - 10px);
-            border: 1px solid var(--primary-color);
-            border-radius: 2px;
-            background-color: white;
-            color: var(--primary-color);
-          }
-          #apply {
-            background-color: var(--primary-color);
-            color: white;
-          }
+      .option {
+        @include flexBox(center, center, auto, column);
+        button {
+          line-height: 30px;
         }
-      }
-
-      &__container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: scroll;
-        margin: 0 5px 5px;
-        border: 0.5px solid rgba(0, 0, 0, 0.1);
-        padding: 20px 20px 50px;
-        .content {
-          position: relative;
-          padding: 0 10px 10px 0;
-          margin-bottom: 25px;
-          &:after {
-            position: absolute;
-            content: "";
-            bottom: 0;
-            left: 0;
-            height: 1px;
-            width: 95%;
-            background-color: rgba(0, 0, 0, 0.1);
-          }
-          &__heading {
-            position: relative;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin-bottom: 24px;
-            line-height: 24px;
-            &:before {
-              display: block;
-              position: absolute;
-              content: "";
-              width: 2px;
-              height: 14px;
-              top: calc(50% - 7px);
-              right: 6px;
-              background-color: #011e41;
-            }
-            &:after {
-              position: absolute;
-              content: "";
-              width: 14px;
-              height: 2px;
-              top: calc(50% - 1px);
-              right: 0;
-              background-color: #011e41;
-            }
-          }
-          &__items {
-            label input[type="checkbox"] {
-              margin-right: 15px;
-            }
-            overflow: hidden;
-            height: 0;
-            transition: 0.5s;
-          }
-        }
-        .showContent {
-          .content {
-            &__heading {
-              &:before {
-                display: none;
-              }
-            }
-
-            &__items {
-              height: 100px;
-              transition: 0.5s;
-            }
-          }
+        img {
+          margin-left: 15px;
         }
       }
     }
-  }
-}
-@media screen and (max-width: 1020px) {
-  .product__items .showSelector {
-    @include flexBox(center, center);
-    width: 100%;
-    height: 100%;
-    right: 0;
-    left: 0;
-    position: fixed;
-    overflow: hidden;
-    bottom: 0;
-    background-color: white;
-    border: 1px solid var(--primary-color);
-    z-index: 99;
-  }
-  .product__filter .filter .show {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .product {
-    &__filter {
-      display: flex;
-      position: relative;
+    .showSort {
+      @include flexBox(center, center);
+      left: 0;
       width: 100%;
-      padding: 0;
-      height: 20px;
-      margin-bottom: 40px;
-      .filter,
-      .sort {
+      height: 100%;
+      position: fixed;
+      border: 1px solid var(--primary-color);
+      z-index: 100;
+      transition: 1s;
+      button {
         border: none;
-        width: 200px;
-        padding: 0;
-        cursor: auto;
+        background: white;
       }
+      .overlay {
+        width: 100%;
+        height: 80%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .list {
+        width: 100%;
+        background-color: white;
+        height: 150px;
+      }
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
 
-      .filter {
-        @include flexBox(center, space-between);
-        font-size: 20px;
-        font-weight: 600;
-        width: 20%;
-        .icon {
-          display: none;
-        }
-        .refresh {
-          display: block;
-          position: relative;
-          cursor: pointer;
-          span {
-            font-size: 16px;
-            font-weight: 400;
-          }
-        }
+
+@include large {
+  .product__filter {
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    height: 20px;
+    margin-bottom: 40px;
+    .filter,
+    .sort {
+      border: none;
+      width: 200px;
+      padding: 0;
+      cursor: auto;
+    }
+
+    .filter {
+      @include flexBox(center, space-between);
+     
+      @include fs(20, 600);
+      width: 20%;
+      .icon {
+        display: none;
       }
-      .numberItem {
+      .refresh {
         display: block;
-        width: calc(80% - 220px);
-        padding-left: 40px;
-        font-size: 20px;
-        font-weight: 600;
-        &:after {
-          content: ' Product(s)'
-        }
-      }
-      .sort {
         position: relative;
-        justify-content: flex-end;
-        margin-right: 20px;
-        font-size: 16px;
         cursor: pointer;
-        .desktop {
-          display: block;
-        }
-        .selectSort {
-          visibility: hidden;
-          position: absolute;
-          top: 30px;
-          bottom: auto;
-          opacity: 0;
-          height: 100%;
-          &__heading {
-            margin: 0;
-          }
-          .list .option button {
-            padding: 0 10px;
-          }
-        }
         span {
-          &:after {
-            content: attr(data-after);
-            font-size: 16px;
-            margin-right: 15px;
-          }
-        }
-
-        .showSort {
-          position: absolute;
-          @include flexBox();
-          margin: 0 15px;
-          opacity: 1;
-          height: 130px;
-          border-radius: 4px;
-          overflow: hidden;
-          top: 48px;
-          width: 200px;
-          box-shadow: 0 3px 6px rgb(0 0 0 / 15%);
-          visibility: visible;
-          border: none;
-          transition: 1s;
-          z-index: 100;
-          .overlay {
-            display: none;
-          }
+          font-size: 16px;
+          font-weight: 400;
         }
       }
     }
-
-    &__items {
-      .selector {
-        position: relative;
-        display: flex;
-        width: 20%;
+    .numberItem {
+      display: block;
+      width: calc(80% - 220px);
+      padding-left: 40px;
+      font-size: 20px;
+      font-weight: 600;
+      &:after {
+        content: " Product(s)";
+      }
+    }
+    .sort {
+      position: relative;
+      justify-content: flex-end;
+      margin-right: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      .desktop {
+        display: block;
+      }
+      .selectSort {
+        visibility: hidden;
+        position: absolute;
+        top: 30px;
+        bottom: auto;
+        opacity: 0;
         height: 100%;
-        z-index: 100;
-        transition: none;
-        &__header {
-          display: none;
-        }
-        &__container {
+        &__heading {
           margin: 0;
-          padding: 0 16px 0 0;
-          border: none;
-          overflow: unset;
         }
-        .footerFilter {
+        .list .option button {
+          padding: 0 10px;
+        }
+      }
+      span {
+        &:after {
+          content: attr(data-after);
+          font-size: 16px;
+          margin-right: 15px;
+          text-transform: uppercase;
+        }
+      }
+
+      .showSort {
+        position: absolute;
+        @include flexBox();
+        margin: 0 15px;
+        opacity: 1;
+        height: 130px;
+        border-radius: 4px;
+        overflow: hidden;
+        top: 48px;
+        width: 200px;
+        box-shadow: 0 3px 6px rgb(0 0 0 / 15%);
+        visibility: visible;
+        border: none;
+        transition: 1s;
+        z-index: 100;
+        .overlay {
           display: none;
         }
       }
