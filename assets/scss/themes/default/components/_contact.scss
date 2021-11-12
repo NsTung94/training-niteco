@@ -1,25 +1,25 @@
 .contact-icon {
   z-index: 99;
 
-  #mobile {
-    display: block;
+  &--mobile {
     position: fixed;
+    display: block;
     bottom: 100px;
     right: 20px;
     border: none;
     z-index: 98;
   }
-  #desktop {
+  &--desktop {
     display: none;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .contact-icon {
-    #mobile {
+    &--mobile {
       display: none;
     }
-    #desktop {
+    &--desktop {
       display: block;
       position: fixed;
       cursor: pointer;
@@ -27,7 +27,7 @@
       right: 10px;
       border: 2px solid white;
       border-radius: 40px;
-      z-index: 999;
+      z-index: 99;
     }
   }
 }

@@ -24,6 +24,12 @@
   position: relative;
   align-self: center;
   top: 0;
+  &--selector{
+    margin-right: 15px;
+  }
+  &--compare {
+    margin-right: 10px;
+  }
 }
 
 /* On mouse-over, add a grey background color */
@@ -34,8 +40,6 @@
 /* When the checkbox is checked, add a blue background */
 .myCheckBox input:checked ~ .checkmark {
   background-color: transparent;
-  margin-right: 10px;
-
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */

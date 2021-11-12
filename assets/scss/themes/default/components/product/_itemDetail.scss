@@ -71,37 +71,39 @@
 .item__suggestion {
   @include flexBox(stretch);
   width: 100%;
-  .interest {
-    @include flexBox(center, center, wrap, column);
-    width: 15%;
-    background-color: var(--primary-color);
-    padding: 8px 20px 8px 8px;
-    border-radius: 4px;
-    .number {
-      font-weight: 600;
-      font-size: 18px;
-      text-align: center;
-      color: white;
-    }
-    span {
-      font-size: 8px;
-      color: white;
-    }
+  
+}
+
+.interest {
+  @include flexBox(center, center, wrap, column);
+  width: 15%;
+  background-color: var(--primary-color);
+  padding: 8px 20px 8px 8px;
+  border-radius: 4px;
+  &__number {
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    color: white;
   }
-  .payment {
+  &__payment {
     @include flexBox(center);
     width: 85%;
     flex-grow: 1;
     font-size: 16px;
     padding-left: 10px;
     background-color: #dfe7ea;
-    .money {
+    &-money {
       font-weight: 600;
     }
-    .due {
+    &-due {
       padding-left: 0.2em;
       font-weight: 400;
     }
+  }
+  span {
+    font-size: 8px;
+    color: white;
   }
 }
 
@@ -114,8 +116,18 @@
   bottom: auto;
   left: auto;
   cursor: pointer;
+  .fill {
+    display: none;
+  }
 }
-
+.clicked {
+  .outline {
+    display: none;
+  }   
+  .fill{
+    display: block;
+  }
+}
 //Add to compare checkbox
 .compare {
     order: 4;

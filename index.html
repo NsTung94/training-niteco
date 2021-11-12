@@ -266,7 +266,9 @@
                   />
                 </button>
               </li>
-              <li class="navigation__icon navigation__icon--menu hide-on-desktop">
+              <li
+                class="navigation__icon navigation__icon--menu hide-on-desktop"
+              >
                 <button>
                   <img
                     src="./assets/scss/themes/default/icons/hamburger.svg"
@@ -435,8 +437,8 @@
               </div>
             </div>
           </div>
-          <div class="product__selector hide-on-mobile">
-            <div class="product__selector-header hide-on-desktop">
+          <div class="product__selector">
+            <div class="product__selector-header hide-on-desktop js--close">
               <img
                 src="./assets/scss/themes/default/icon/filter-icon.svg"
                 alt=""
@@ -449,33 +451,147 @@
                 class="product__selector-header--close"
               />
             </div>
-            <ul class="product__selector-container">
-              <li class="product__selector-container--filter">
-                <div class="title">Storage</div>
-                <div class="content hide">
-                  <label class="myCheckBox">
-                    <input type="checkbox__input" class="">
-                    <span class="checkmark"></span>
-                    <span class="checkbox__label">All</span>
-                  </label>
-                </div>
-              </li>
-
-              <li class="product__selector-container--filter">
-                <div class="title">deal type</div>
-                <div class="content hide">
-              
-              
-                </div>
-              </li>
-
-              <li class="product__selector-container--filter">
-                <div class="title">price</div>
-                <div class="content hide">
-                
-                </div>
-              </li>
-            </ul>
+            <div class="product__selector-container">
+              <ul class="product__selector-container-list">
+                <li class="product__selector-container-filter js-menu-dropdown">
+                  <div
+                    class="
+                      product__selector-container-filter-title
+                      js-menu-dropdown__button
+                    "
+                  >
+                    stock status
+                  </div>
+                  <div
+                    class="
+                      product__selector-container-filter-content
+                      js-menu-dropdown__content
+                    "
+                  >
+                    <div
+                      class="
+                        product__selector-container-filter-content--checkbox
+                      "
+                    >
+                      <label class="myCheckBox">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label">In stock</span>
+                      </label>
+                    </div>
+                    <div
+                      class="
+                        product__selector-container-filter-content--checkbox
+                      "
+                    >
+                      <label class="myCheckBox">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label">All</span>
+                      </label>
+                    </div>
+                  </div>
+                </li>
+                <li class="product__selector-container-filter js-menu-dropdown">
+                  <div
+                    class="
+                      product__selector-container-filter-title
+                      js-menu-dropdown__button
+                    "
+                  >
+                    promotions
+                  </div>
+                  <div
+                    class="
+                      product__selector-container-filter-content
+                      js-menu-dropdown__content
+                    "
+                  >
+                    <div
+                      class="
+                        product__selector-container-filter-content--checkbox
+                      "
+                    >
+                      <label class="myCheckBox">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label">Gift with purchase</span>
+                      </label>
+                      <label class="myCheckBox disable">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label">Direct discount</span>
+                      </label>
+                      <label class="myCheckBox">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label">All</span>
+                      </label>
+                    </div>
+                    <div
+                      class="
+                        product__selector-container-filter-content--checkbox
+                      "
+                    >
+                      <label class="myCheckBox">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label">All</span>
+                      </label>
+                    </div>
+                  </div>
+                </li>
+                <li class="product__selector-container-filter js-menu-dropdown">
+                  <div
+                    class="
+                      product__selector-container-filter-title
+                      js-menu-dropdown__button
+                    "
+                  >
+                    Storage
+                  </div>
+                  <div
+                    class="
+                      product__selector-container-filter-content
+                      js-menu-dropdown__content
+                    "
+                  >
+                    <div
+                      class="
+                        product__selector-container-filter-content--checkbox
+                      "
+                    >
+                      <label class="myCheckBox">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label">All</span>
+                      </label>
+                      <label class="myCheckBox">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label">All</span>
+                      </label>
+                      <label class="myCheckBox">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label">All</span>
+                      </label>
+                    </div>
+                    <div
+                      class="
+                        product__selector-container-filter-content--checkbox
+                      "
+                    >
+                      <label class="myCheckBox">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label">All</span>
+                      </label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
             <div class="product__selector-footer hide-on-desktop">
               <div class="btn center-flex-row product__selector-footer--reset">
                 Reset
@@ -485,6 +601,7 @@
                   btn btn--primary
                   center-flex-row
                   product__selector-footer--apply
+                  js--close
                 "
               >
                 Apply Filters
@@ -706,12 +823,14 @@
                 </div>
                 <div class="product__item-suggestion hide-on-desktop">
                   <div class="interest">
-                    <div class="number">0%</div>
+                    <div class="interest__number">0%</div>
                     <span>Interest</span>
                   </div>
-                  <div class="payment">
-                    <div class="money">3.331.000 VND/month</div>
-                    <div class="due">for 6 months</div>
+                  <div class="interest__payment">
+                    <div class="interest__payment-money">
+                      3.331.000 VND/month
+                    </div>
+                    <div class="interest__payment-due">for 6 months</div>
                   </div>
                 </div>
                 <ul class="product__item-description">
@@ -730,7 +849,7 @@
                 </div>
                 <label class="myCheckBox compare hide-on-mobile">
                   <input type="checkbox" checked="checked" />
-                  <span class="checkmark"></span>
+                  <span class="checkmark checkmark--compare"></span>
                   Add to Compare
                 </label>
               </div>
@@ -970,7 +1089,7 @@
                 </div>
                 <label class="myCheckBox compare hide-on-mobile">
                   <input type="checkbox" checked="checked" />
-                  <span class="checkmark"></span>
+                  <span class="checkmark checkmark--compare"></span>
                   Add to Compare
                 </label>
               </div>
@@ -980,14 +1099,14 @@
         <div class="contact-icon">
           <a href="tel:123-456-7890">
             <img
-              id="mobile"
+              class="contact-icon--mobile"
               src="./assets/scss/themes/default/icon/contact-mobile.png"
               alt=""
             />
           </a>
           <a href="tel:123-456-7890">
             <img
-              id="desktop"
+              class="contact-icon--desktop"
               src="./assets/scss/themes/default/icon/contact.png"
               alt=""
             />
@@ -1141,7 +1260,7 @@
             Terms & Conditions | Data Protection Policy | Cookie Guideline |
             Sitemap
           </div>
-  
+
           <div class="copyright">
             Copyright 2020 Electrolux - All Rights Reserved.
           </div>

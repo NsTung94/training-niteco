@@ -35,8 +35,10 @@ body {
   }
   .row {
     @include flexBox();
-    margin: 0 -20px;
-  };
+    @include large {
+      margin: 0 -20px;
+    }
+  }
 }
 
 :root {
@@ -64,7 +66,7 @@ input[type="checkbox"] {
 label {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
+  // margin-bottom: 16px;
 }
 .disable {
   opacity: 0.5;
@@ -103,6 +105,7 @@ label {
 }
 
 button {
+  border: none;
   background-color: transparent;
 }
 
@@ -127,25 +130,23 @@ button {
   height: auto;
 }
 
-.show {
-  .showDropDown {
-    input[type="checkbox"] {
-      margin-right: 10px;
+
+.hideDropDown{
+  display: none;
+}
+.showDropDown {
+  display: block;
+  .title {
+    margin-bottom: 10px;
+    &:before {
+      visibility: hidden;
     }
-   
-    .title {
-      margin-bottom: 10px;
-      &:before {
-        visibility: hidden;
-      }
-    }
-    .content {
-      visibility: visible;
-      height: 90px;
-      min-width: 250px;
-      transition: 0.5s;
-      gap: 5px;
-     
-    }
+  }
+  .content {
+    visibility: visible;
+    height: 90px;
+    min-width: 250px;
+    transition: 0.5s;
+    gap: 5px;
   }
 }

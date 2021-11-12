@@ -53,28 +53,31 @@
     }
   }
   &-price {
-    @include flexBox(base-line, flex-start, wrap, row);
+    @include flexBox(center, flex-start, wrap, row);
+    margin: 5px 0;
     gap: 8px;
     width: 100%;
-    &--old {
-      font-size: 400 12px $font-primary;
-      text-decoration: line-through;
-      @include large {
-        font: 400 14px/28px $font-primary;
-      }
-    }
-    &--new {
-      @include large{
-        @include flexBox(center);
-        font: 600 16px $font-primary;
-        
-      }
-    }
+    height: 30px;
     @include large {
       margin-top: auto;
       margin-bottom: 5px;
       order:2;
     }
+    &--old {
+      text-decoration: line-through;
+      font: 400 14px/28px $font-primary;
+      @include large {
+      }
+    }
+    &--new {
+      font: 600 18px $font-primary;
+      @include large{
+        @include flexBox(center);
+        font: 600 24px/28px $font-primary;
+        
+      }
+    }
+    
   }
   &-suggestion {
     width: 100%;
@@ -93,19 +96,21 @@
   &-description {
     list-style-type: disc;
     padding: 0 20px;
+    li {
+      font: 400 14px/24px $font-primary;
+    }
     @include large {
       order: 1;
-      font: 400 14px/24px $font-primary;
     }
   }
   &-action {
     @include flexBox();
     width: 100%;
-    margin: 0 -5px;
     &--add,
     &--research {
       margin: 0 5px;
       width: 100%;
+      height: 45px;
       margin-bottom: 5px;
       @include large {
         width: calc(50% - 10px);
@@ -118,7 +123,7 @@
       order: 1;
     }
     @include large {
-      margin-bottom: 5px;
+      margin: 0 -5px 5px;
       order: 3;
     }
   }
