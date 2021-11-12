@@ -12,6 +12,7 @@
 *:after {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  background-repeat: no-repeat;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -39,3 +40,4 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+

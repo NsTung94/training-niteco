@@ -1,0 +1,57 @@
+.product__filter {
+  @include flexBox(center, space-between);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 80px;
+  background-color: #ffffff;
+  z-index: 50;
+  padding: 0 20px;
+  gap: 10px;
+  &-filter,
+  &-sort {
+    width: 120px;
+    height: 48px;
+  }
+  @include large {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 30px;
+    @include flexBox();
+    &-filter,
+    &-sort {
+      border: none;
+      @include flexBox(center, space-between, wrap, row);
+      width: 20%;
+      height: 100%;
+      padding: 0;
+      font-size: 16px;
+      &--refresh {
+        font: 400 14px "Electrolux", serif;
+      }
+    }
+    .numberItem {
+      @include flexBox(center);
+      width: 20%;
+      height: 100%;
+      padding: 0 20px;
+      span {
+        &:after{
+            content:" Product(s)"
+        }
+      }
+    }
+    &-sort {
+      @include flexBox(center, flex-end, wrap, row);
+      width: calc(60% - 20px);
+      gap: 10px;
+      span {
+        &:after {
+          content: ": Default";
+        }
+      }
+    }
+  }
+}

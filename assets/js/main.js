@@ -1,46 +1,30 @@
-let x = document.querySelectorAll(".item__price .old, .item__price .new");
+// change format of Price
+let x = document.querySelectorAll(".product__item-price--old, .product__item-price--new");
 for (var i = 0; i < x.length; i++) {
   let num = Number(x[i].innerHTML).toLocaleString("de");
   x[i].innerHTML = num;
 }
 
-var footer = document.getElementById("footer");
-var filter = document.getElementById("filter");
-var filterBtn = document.querySelector(".footerBtn");
+let filter = document.querySelector(".product__filter");
 
-function reachBottom(entries) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      // hide
-      filter.classList.add("hideBtn");
-      filterBtn.style.display = "none";
-    } else {
-      // show button
-      filter.classList.remove("hideBtn");
-      filterBtn.style.display = "flex";
-    }
+function hideFilter(destinationClass) {
+  let destination = document.querySelector(destinationClass);
+
+  let observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        filter.classList.add("hide");
+      } else {
+        filter.classList.remove("hide");
+      }
+    });
   });
-}
-let observer = new IntersectionObserver(reachBottom);
-observer.observe(footer);
 
-var topPage = document.getElementById("header");
-
-function reachTop(entries) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      // hide
-      filter.classList.add("hideBtn");
-      filterBtn.style.display = "none";
-    } else {
-      // show button
-      filter.classList.remove("hideBtn");
-      filterBtn.style.display = "flex";
-    }
-  });
+  observer.observe(destination);
 }
-let observerTop = new IntersectionObserver(reachTop);
-observerTop.observe(topPage);
+
+hideFilter("#header");
+hideFilter("#footer");
 
 // lazy image using Intersection Observer to check viewport
 document.addEventListener("DOMContentLoaded", function () {
@@ -72,21 +56,41 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-let selector = document.getElementById("selector");
-let selectSort = document.getElementById("selectSort");
-let selectorHeader = document.querySelector(".selector__header");
-selectorHeader.addEventListener("click", showSelector);
-let applyBtn = document.querySelector("#apply");
-applyBtn.addEventListener("click", showSelector);
-
-function showSelector() {
-  if (selector.classList.contains("showSelector")) {
-    selector.classList.remove("showSelector");
-  } else {
-    selector.classList.add("showSelector");
-    selectSort.classList.remove("showSort");
-  }
+function showItem(button, show) {
+  let triggerButton = document.querySelector(button);
+  let itemToShow = document.querySelector(show);
+  triggerButton.addEventListener("click", function () {
+    if (itemToShow.classList.contains("show")) {
+      itemToShow.classList.remove("show");
+    } else {
+      itemToShow.classList.add("show");
+    }
+  });
 }
+
+showItem(".product__filter-filter--filter", ".product__selector");
+showItem(".product__selector-header", ".product__selector");
+showItem(".product__selector-footer--apply", ".product__selector");
+
+function showDropDownGroup(dropDownOwner) {
+  let dropDownCarrier = document.querySelectorAll(dropDownOwner);
+  dropDownCarrier.forEach( function (item, index) {
+    console.log(index, "item", item)
+    let triggerButton = item.querySelector('.title');
+    console.log("triggerButton", triggerButton)
+    triggerButton.addEventListener('click', function(){
+      if (item.classList.contains('showDropDown')){
+        item.classList.remove('showDropDown');
+      }else{
+        item.classList.add('showDropDown');
+      }
+    } )
+    })
+  ;
+}
+
+showDropDownGroup('.product__selector-container--filter');
+showDropDownGroup('.footer-option-item');
 
 let hearts = document.querySelectorAll(".item__heart");
 heartItems = [].slice.call(hearts);
@@ -101,63 +105,64 @@ heartItems.forEach(function (item) {
   });
 });
 
-let contentSelector = document.querySelectorAll(
-  ".selector__container .content"
-);
+// let contentSelector = document.querySelectorAll(
+//   ".selector__container .content"
+// );
 
-contents = [].slice.call(contentSelector);
+// contents = [].slice.call(contentSelector);
 
-contents.forEach(function (item) {
-  var headingBtn = item.querySelector(".content__heading");
-  headingBtn.addEventListener("click", function () {
-    if (item.classList.contains("showContent")) {
-      item.classList.remove("showContent");
-    } else {
-      item.classList.add("showContent");
-    }
-  });
-});
+// contents.forEach(function (item) {
+//   var headingBtn = item.querySelector(".content__heading");
+//   headingBtn.addEventListener("click", function () {
+//     if (item.classList.contains("showContent")) {
+//       item.classList.remove("showContent");
+//     } else {
+//       item.classList.add("showContent");
+//     }
+//   });
+// });
 
-function showSort() {
-  if (selectSort.classList.contains("showSort")) {
-    selectSort.classList.remove("showSort");
-  } else {
-    selectSort.classList.add("showSort");
-    selector.classList.remove("showSelector");
-  }
-}
+// function showSort() {
+//   if (selectSort.classList.contains("showSort")) {
+//     selectSort.classList.remove("showSort");
+//   } else {
+//     selectSort.classList.add("showSort");
+//     selector.classList.remove("showSelector");
+//   }
+// }
 
-var languageBtn = document.querySelector("#language");
-var dropdown = document.querySelector(".navigation__icon .dropdown");
+// var languageBtn = document.querySelector("#language");
+// var dropdown = document.querySelector(".navigation__icon .dropdown");
 
-languageBtn.addEventListener("click", function () {
-  if (dropdown.classList.contains("show")) {
-    console.log("show true", dropdown.classList.contains("show"));
-    dropdown.classList.remove("show");
-  } else {
-    dropdown.classList.add("show");
-  }
-});
+// languageBtn.addEventListener("click", function () {
+//   if (dropdown.classList.contains("show")) {
+//     console.log("show true", dropdown.classList.contains("show"));
+//     dropdown.classList.remove("show");
+//   } else {
+//     dropdown.classList.add("show");
+//   }
+// });
 
-function resetCbs() {
-  var allChecked = document.querySelectorAll("input[type=checkbox]:checked");
+// function resetCbs() {
+//   var allChecked = document.querySelectorAll("input[type=checkbox]:checked");
 
-  allChecked.forEach((target) => (target.checked = false));
-}
+//   allChecked.forEach((target) => (target.checked = false));
+// }
 
-var list = document.querySelector(".items");
-let original = list.querySelectorAll(".item");
-// console.log(original);
-var nodesToSort = list.querySelectorAll(".item");
-// console.log("nodesToSort", nodesToSort)
+// var list = document.querySelector(".items");
+// let original = list.querySelectorAll(".item");
+// // console.log(original);
+// var nodesToSort = list.querySelectorAll(".item");
+// // console.log("nodesToSort", nodesToSort)
 
-var sortBtn = document.querySelector(".sort span");
-sortBtn.setAttribute("data-after", ": Default");
-function changeSortBy(name) {
-  sortBtn.setAttribute("data-after", name);
-}
+// var sortBtn = document.querySelector(".sort span");
+// sortBtn.setAttribute("data-after", ": Default");
+// function changeSortBy(name) {
+//   sortBtn.setAttribute("data-after", name);
+// }
 
-var menuBtn = document.querySelector(".navigation__icons #menu");
+var menuBtn = document.querySelector(".navigation__icon--menu");
+console.log(menuBtn);
 var menu = document.querySelector(".menu");
 menuBtn.addEventListener("click", function () {
   menu.classList.add("showMenu");

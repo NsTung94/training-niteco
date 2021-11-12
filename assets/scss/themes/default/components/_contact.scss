@@ -1,37 +1,33 @@
-.container {
-  .contact-icon {
-    z-index: 99;
+.contact-icon {
+  z-index: 99;
 
-    #mobile {
-      display: block;
-      position: fixed;
-      bottom: 100px;
-      right: 20px;
-      border: none;
-      z-index: 98;
-    }
-    #desktop {
-      display: none;
-    }
+  #mobile {
+    display: block;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    border: none;
+    z-index: 98;
+  }
+  #desktop {
+    display: none;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .container {
-    .contact-icon {
-      #mobile {
-        display: none;
-      }
-      #desktop {
-        display: block;
-        position: fixed;
-        cursor: pointer;
-        bottom: 50px;
-        right: 10px;
-        border: 2px solid white;
-        border-radius: 40px;
-        z-index: 999;
-      }
+  .contact-icon {
+    #mobile {
+      display: none;
+    }
+    #desktop {
+      display: block;
+      position: fixed;
+      cursor: pointer;
+      bottom: 50px;
+      right: 10px;
+      border: 2px solid white;
+      border-radius: 40px;
+      z-index: 999;
     }
   }
 }

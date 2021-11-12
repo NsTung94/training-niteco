@@ -4,7 +4,6 @@
   display: flex;
   align-items: baseline;
   gap: 5px;
-  margin-bottom: 20px;
   .rating-group {
     display: inline-flex;
     gap: 2px;
@@ -108,27 +107,13 @@
 
 // Add to Wishlist button <3
 
-.item__heart {
+.product__item-heart {
   position: absolute;
   right: 0;
   top: 0;
   bottom: auto;
   left: auto;
   cursor: pointer;
-  .outline {
-    display: block;
-  }
-  .fill {
-    display: none;
-  }
-}
-.clicked {
-  .outline {
-    display: none;
-  }
-  .fill {
-    display: block;
-  }
 }
 
 //Add to compare checkbox

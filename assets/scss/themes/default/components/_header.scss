@@ -16,15 +16,15 @@
     align-items: center;
     justify-content: flex-end;
     width: 100%;
-    &__link {
-      display: none;
-    }
+   
     &__icons {
       display: flex;
       align-items: center;
       padding: 0;
       .navigation__icon {
         margin-left: 15px;
+        border: none;
+        background-color: transparent;
 
         button {
           border: none;
@@ -70,16 +70,9 @@
       &__icons {
         .navigation__icon {
           width: fit-content;
-          margin: 0 12.5px;
+          // margin: 0 12.5px;
         }
-        #menu {
-          display: none;
-        }
-        #user,
-        #language {
-          display: block;
-        }
-        #language {
+        .language {
           text-transform: uppercase;
           margin: 0;
           margin-left: 15px;

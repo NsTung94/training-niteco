@@ -1,7 +1,9 @@
+@use "sass:math";
 @import "../default/variables";
 @import "../default/mixins";
 @import "../default/font";
 @import "../default/reset";
+@import "../default/typography";
 
 @import "../default/components/breadcrumb";
 @import "../default/components/category";
@@ -12,58 +14,6 @@
 @import "../default/components/product/product";
 @import "../default/components/contact";
 @import "../default/components/menu";
+@import "../default/components/checkbox";
 
 
-.container {
-  position: relative;
-  margin-top: 20px;
-  overflow: hidden;
-  margin: 0 15px;
-}
-
-:root {
-  --primary-color: #011e41;
-}
-
-html {
-  font-size: 16px;
-}
-
-body {
-  color: var(--primary-color);
-  font-family: "Electrolux";
-  margin: 0;
-}
-
-button {
-  background-color: #ffffff;
-  cursor: pointer;
-  font-family: 'Electrolux';
-  &:hover {
-    opacity: 0.9;
-    transition: all 0.1s ease-in-out;
-  }
-}
-
-input[type="checkbox"]{
-  transform: scale(1.5);
-  cursor: pointer;
-}
-
-label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
-.disable {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-
-@media screen and (min-width: 1200px) {
-  .container {
-    width: 1180px;
-    margin: 0 auto;
-  }
-}
